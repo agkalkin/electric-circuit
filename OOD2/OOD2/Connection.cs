@@ -11,5 +11,12 @@ namespace OOD2
         //IDs of elements that are connected to the front and back
         int endID;
         int frontID;
+
+        public Connection(int frontID, int endID)
+            : base(frontID, endID)
+        {
+            this.frontID = frontID;
+            this.endID = endID;
+        }
     }
 }

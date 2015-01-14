@@ -8,5 +8,6 @@ namespace OOD2
 {
     class OR : Gate
     {
+        public OR(int x, int y) : base(x, y) { }
     }
 }

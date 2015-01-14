@@ -11,21 +11,34 @@ namespace OOD2
         //File path including name and extension
         string fileLocation;
 
-        Boolean OpenPng();
+        Boolean OpenPng()
+        {
+            return true;
+        }
 
-        Boolean SavePng();
+        Boolean SavePng()
+        {
+            return true;
+        }
 
         /// <summary>
         /// Opens editable file
         /// </summary>
         /// <returns>List of elements on circuit</returns>
-        List<IElement> OpenFile();
+        List<IElement> OpenFile()
+        {
+            List<IElement> list = new List<IElement>();
+            return list;
+        }
 
         /// <summary>
         /// Saves to editable file
         /// </summary>
         /// <param name="elements">List of elements on circuit</param>
         /// <returns>True if successful</returns>
-        bool SaveToFile(List<IElement> elements);
+        Boolean SaveToFile(List<IElement> elements)
+        {
+            return true;
+        }
     }
 }

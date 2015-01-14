@@ -17,16 +17,37 @@ namespace OOD2
         Record undo_redo;
         static int lastId;
 
-        Boolean AddConnection();
-        Boolean AddElement(int id);
+        Boolean AddConnection()
+        {
+            return true;
+        }
+        Boolean AddElement(int id)
+        {
+            return true;
+        }
         //Added 2 more parameters for coordinates
         //Not sure if we'll need them
-        Boolean MoveElement(int id, int x, int y);
+        Boolean MoveElement(int id, int x, int y)
+        {
+            return true;
+        }
         //Added parameter
-        Boolean RemoveConnection(int id);
-        Boolean RemoveElement(int id);
+        Boolean RemoveConnection(int id)
+        {
+            return true;
+        }
+        Boolean RemoveElement(int id)
+        {
+            return true;
+        }
         //Not sure if we'll need the last 2
-        int Calculate();
-        void AssignColor();
+        int Calculate()
+        {
+            return -1;
+        }
+        void AssignColor()
+        {
+
+        }
     }
 }
