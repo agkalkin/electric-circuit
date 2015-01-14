@@ -8,5 +8,10 @@ namespace OOD2
 {
     class Record
     {
+        List<TypeOfChange> changes;
+        List<IElement> oldElements;
+
+        Boolean Undo();
+        Boolean Redo();
     }
 }
