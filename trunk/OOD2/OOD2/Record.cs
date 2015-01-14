@@ -11,7 +11,13 @@ namespace OOD2
         List<TypeOfChange> changes;
         List<IElement> oldElements;
 
-        Boolean Undo();
-        Boolean Redo();
+        Boolean Undo()
+        {
+            return true;
+        }
+        Boolean Redo()
+        {
+            return true;
+        }
     }
 }

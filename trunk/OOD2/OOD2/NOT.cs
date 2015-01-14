@@ -8,5 +8,6 @@ namespace OOD2
 {
     class NOT : Gate
     {
+        public NOT(int x, int y) : base(x, y) { }
     }
 }

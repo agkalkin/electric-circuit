@@ -8,5 +8,6 @@ namespace OOD2
 {
     class Sink:Logic
     {
+        public Sink(int x, int y):base(x,y) { }
     }
 }

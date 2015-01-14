@@ -10,3 +10,8 @@ c:\users\masteryoda\documents\visual studio 2013\Projects\OOD2\OOD2\obj\Debug\OO
 D:\Work\trunk\OOD2\OOD2\bin\Debug\OOD2.exe.config
 D:\Work\trunk\OOD2\OOD2\obj\Debug\OOD2.exe
 D:\Work\trunk\OOD2\OOD2\obj\Debug\OOD2.pdb
+D:\Work\trunk\OOD2\OOD2\obj\Debug\OOD2.Form1.resources
+D:\Work\trunk\OOD2\OOD2\obj\Debug\OOD2.Properties.Resources.resources
+D:\Work\trunk\OOD2\OOD2\obj\Debug\OOD2.csproj.GenerateResource.Cache
+D:\Work\trunk\OOD2\OOD2\bin\Debug\OOD2.exe
+D:\Work\trunk\OOD2\OOD2\bin\Debug\OOD2.pdb
