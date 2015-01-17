@@ -8,6 +8,6 @@ namespace OOD2
 {
     class Source:Logic
     {
-        public Source(int x, int y) : base(x, y) { }
+        public Source(int id,int x, int y) : base(x, y) { }
     }
 }

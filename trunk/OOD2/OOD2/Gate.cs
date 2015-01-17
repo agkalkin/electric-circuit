@@ -8,7 +8,7 @@ namespace OOD2
 {
     abstract class Gate: IElement
     {
-        public Gate(int x, int y) { }
+        public Gate(int id,int x, int y) { }
         /// <summary>
         /// Takes two inputs and generates output
         /// </summary>

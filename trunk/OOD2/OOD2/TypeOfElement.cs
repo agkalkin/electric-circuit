@@ -8,6 +8,11 @@ namespace OOD2
 {
     enum TypeOfElement
     {
-
+        CONNECTION,
+        ANDGATE,
+        ORGATE,
+        NOTGATE,
+        SINK,
+        SOURCE
     }
 }

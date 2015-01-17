@@ -12,6 +12,9 @@ namespace OOD2
 {
     public partial class Form1 : Form
     {
+        TypeOfElement NewElement;
+        Circuit thecircuit;
+        int idcounter;
         public Form1()
         {
             InitializeComponent();

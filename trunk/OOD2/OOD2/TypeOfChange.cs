@@ -8,5 +8,8 @@ namespace OOD2
 {
     enum TypeOfChange
     {
+        ADD,
+        MOVE,
+        REMOVE
     }
 }
