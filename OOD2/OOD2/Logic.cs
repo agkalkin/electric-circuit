@@ -11,6 +11,10 @@ namespace OOD2
         //Logic value of the element (0, 1 or "unknown"
         public int logicValue;
         public Logic(int x, int y) { }
+        public virtual Boolean MoveElement(int x, int y)
+        {
+            return true;
+        }
 
         public int id
         {
