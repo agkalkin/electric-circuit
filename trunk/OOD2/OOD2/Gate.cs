@@ -34,54 +34,65 @@ namespace OOD2
             return output;
         }
 
+        public abstract Boolean MoveElement(int x, int y);
+
         public bool Drawing()
         {
             return true;
         }
 
-        public int id
+        public abstract int id
         {
-            get { throw new NotImplementedException(); }
+            get;
+             set;
         }
 
-        public int input
+        public abstract int input
         {
-            get { throw new NotImplementedException(); }
+            get;
+             set;
         }
 
-        public int output
+        public abstract int output
         {
-            get { throw new NotImplementedException(); }
+            get;
+             set;
         }
 
-        public int maxInput
+        public abstract int maxInput
         {
-            get { throw new NotImplementedException(); }
+            get;
+             set;
         }
 
-        public int maxOutput
+        public abstract int maxOutput
         {
-            get { throw new NotImplementedException(); }
+            get;
+             set;
         }
 
-        public int oldX
+        public abstract int oldX
         {
-            get { throw new NotImplementedException(); }
+            get;
+             set;
         }
 
-        public int oldY
+        public abstract int oldY
         {
-            get { throw new NotImplementedException(); }
+            get;
+             set;
         }
 
-        public int x
+        public abstract int x
         {
-            get { throw new NotImplementedException(); }
+            get;
+            set;
         }
 
-        public int y
+        public abstract int y
         {
-            get { throw new NotImplementedException(); }
+            get;
+            set;
         }
     }
 }

@@ -20,6 +20,6 @@ namespace OOD2
 
         bool Drawing();
 
-        void SetId(int id);
+        Boolean MoveElement(int x, int y);
     }
 }

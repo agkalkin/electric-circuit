@@ -15,7 +15,16 @@ namespace OOD2
         IElement secondSelectedId;
         List<IElement> elements;
         Record undo_redo;
-        static int lastId;
+        private static int lastId = 0;
+
+        /// <summary>
+        /// Generates next ID
+        /// </summary>
+        /// <returns>next ID</returns>
+        private int GetId()
+        {
+            return lastId++;
+        }
 
         Boolean AddConnection()
         {
@@ -29,19 +38,19 @@ namespace OOD2
         {
             if (newelement == TypeOfElement.SOURCE)
             {
-                Source newsource = new Source(mousex, mousey);
+                Source newsource = new Source(GetId(), mousex, mousey);
                 //newsource.SetId(id);
                 elements.Add(newsource);
                 return true;
             }
             else if (newelement == TypeOfElement.ANDGATE)
             {
-                AND newand = new AND(mousex, mousey);
+                AND newand = new AND(GetId(), mousex, mousey);
                 return true;
             }
             else if(newelement==TypeOfElement.NOTGATE)
             {
-                NOT newnot = new NOT(mousex, mousey);
+                NOT newnot = new NOT(GetId(), mousex, mousey);
                 return true;
             }
             else if(newelement==TypeOfElement.ORGATE)
@@ -51,7 +60,7 @@ namespace OOD2
             }
             else if(newelement==TypeOfElement.SINK)
             {
-                Sink newsink = new Sink(mousex, mousey);
+                Sink newsink = new Sink(GetId(), mousex, mousey);
                 elements.Add(newsink);
                 return true; 
             }
@@ -63,8 +72,7 @@ namespace OOD2
         {
             IElement searchelement;
             searchelement=elements.Find(search=> search.id==id);
-            searchelement.x = x;
-            searchelement.y = y;
+            searchelement.MoveElement(x, y);
             return true;
         }
         //Added parameter
