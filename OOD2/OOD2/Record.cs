@@ -13,6 +13,7 @@ namespace OOD2
 
         Boolean Undo()
         {
+
             return true;
         }
         Boolean Redo()

@@ -19,5 +19,7 @@ namespace OOD2
         int y { get; }
 
         bool Drawing();
+
+        void SetId(int id);
     }
 }
