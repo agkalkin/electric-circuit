@@ -15,9 +15,11 @@ namespace OOD2
         TypeOfElement NewElement;
         Circuit thecircuit;
         int idcounter;
+        TypeOfChange lastchange;
         public Form1()
         {
             InitializeComponent();
+            thecircuit = new Circuit();
             
         }
 
@@ -50,7 +52,42 @@ namespace OOD2
 
         private void button4_Click(object sender, EventArgs e)
         {
+            thecircuit.UpdateUndoRedo();
+        }
 
+        private void btnUndo_Click(object sender, EventArgs e)
+        {
+            thecircuit.Undo(lastchange);
+        }
+
+        private void btnRedo_Click(object sender, EventArgs e)
+        {
+            thecircuit.Redo();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            thecircuit.UpdateUndoRedo();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            thecircuit.UpdateUndoRedo();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            thecircuit.UpdateUndoRedo();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            thecircuit.UpdateUndoRedo();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            thecircuit.UpdateUndoRedo();
         }
     }
 }
