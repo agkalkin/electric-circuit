@@ -40,4 +40,4 @@ EASYREDO is just the safety net in case i make something wrong. It reverses the 
 
 12. Added the buttons to the form.
 
-13. Added UNDO REDO methods to circuit to communicate between the FORM and CIRCUIT
+13. Added UNDO REDO UPDATEUNDOREDOs methods to circuit to communicate between the FORM and CIRCUIT
