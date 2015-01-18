@@ -14,8 +14,22 @@ namespace OOD2
         IElement firstSelectedId;
         IElement secondSelectedId;
         List<IElement> elements;
-        Record undo_redo;
+        public Record undo_redo;
         private static int lastId = 0;
+
+        public Circuit()
+        {
+            undo_redo = new Record();
+        }
+
+        public void Undo(TypeOfChange lastchange)
+        {
+            elements=undo_redo.Undo(lastchange, elements);
+        }
+        public void Redo()
+        {
+            elements=undo_redo.Redo();
+        }
 
         /// <summary>
         /// Generates next ID
@@ -26,7 +40,7 @@ namespace OOD2
             return lastId++;
         }
 
-        Boolean AddConnection()
+        public Boolean AddConnection()
         {
             IElement newconnection;
             newconnection = new Connection(firstSelectedId.id, secondSelectedId.id);
@@ -34,7 +48,7 @@ namespace OOD2
             newconnection.Drawing();
             return true;
         }
-        Boolean AddElement(int id,TypeOfElement newelement,int mousex,int mousey)
+        public Boolean AddElement(int id,TypeOfElement newelement,int mousex,int mousey)
         {
             if (newelement == TypeOfElement.SOURCE)
             {
@@ -68,7 +82,7 @@ namespace OOD2
         }
         //Added 2 more parameters for coordinates
         //Not sure if we'll need them
-        Boolean MoveElement(int id, int x, int y)
+        public Boolean MoveElement(int id, int x, int y)
         {
             IElement searchelement;
             searchelement=elements.Find(search=> search.id==id);
@@ -76,24 +90,28 @@ namespace OOD2
             return true;
         }
         //Added parameter
-        Boolean RemoveConnection(int id)
+        public Boolean RemoveConnection(int id)
         {
             elements.Remove(elements.Find(x => x.id == id));
             return true;
         }
-        Boolean RemoveElement(int id)
+        public Boolean RemoveElement(int id)
         {
             elements.Remove(elements.Find(x=>x.id==id));
             return true;
         }
         //Not sure if we'll need the last 2
-        int Calculate()
+        public int Calculate()
         {
             return -1;
         }
         void AssignColor()
         {
 
+        }
+        public void UpdateUndoRedo()
+        {
+            undo_redo.Update(elements);
         }
     }
 }

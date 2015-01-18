@@ -35,6 +35,11 @@
             this.button10 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,11 +53,6 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -75,6 +75,7 @@
             this.btnUndo.TabIndex = 1;
             this.btnUndo.Text = "Undo";
             this.btnUndo.UseVisualStyleBackColor = true;
+            this.btnUndo.Click += new System.EventHandler(this.btnUndo_Click);
             // 
             // btnRedo
             // 
@@ -84,6 +85,7 @@
             this.btnRedo.TabIndex = 2;
             this.btnRedo.Text = "Redo";
             this.btnRedo.UseVisualStyleBackColor = true;
+            this.btnRedo.Click += new System.EventHandler(this.btnRedo_Click);
             // 
             // button9
             // 
@@ -93,6 +95,7 @@
             this.button9.Size = new System.Drawing.Size(78, 63);
             this.button9.TabIndex = 8;
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button10
             // 
@@ -128,6 +131,56 @@
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Toolbox";
+            // 
+            // button4
+            // 
+            this.button4.Image = global::OOD2.Properties.Resources.AND;
+            this.button4.Location = new System.Drawing.Point(17, 19);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(78, 63);
+            this.button4.TabIndex = 3;
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button5
+            // 
+            this.button5.Image = global::OOD2.Properties.Resources.NOT;
+            this.button5.Location = new System.Drawing.Point(101, 19);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(78, 63);
+            this.button5.TabIndex = 4;
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button6
+            // 
+            this.button6.Image = global::OOD2.Properties.Resources.OR;
+            this.button6.Location = new System.Drawing.Point(17, 88);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(78, 63);
+            this.button6.TabIndex = 5;
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // button7
+            // 
+            this.button7.Image = global::OOD2.Properties.Resources.Sink;
+            this.button7.Location = new System.Drawing.Point(101, 88);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(78, 63);
+            this.button7.TabIndex = 6;
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // button8
+            // 
+            this.button8.Image = global::OOD2.Properties.Resources.Source;
+            this.button8.Location = new System.Drawing.Point(17, 157);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(78, 63);
+            this.button8.TabIndex = 7;
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // groupBox2
             // 
@@ -212,52 +265,6 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // button4
-            // 
-            this.button4.Image = global::OOD2.Properties.Resources.AND;
-            this.button4.Location = new System.Drawing.Point(17, 19);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(78, 63);
-            this.button4.TabIndex = 3;
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // button5
-            // 
-            this.button5.Image = global::OOD2.Properties.Resources.NOT;
-            this.button5.Location = new System.Drawing.Point(101, 19);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(78, 63);
-            this.button5.TabIndex = 4;
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.Image = global::OOD2.Properties.Resources.OR;
-            this.button6.Location = new System.Drawing.Point(17, 88);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(78, 63);
-            this.button6.TabIndex = 5;
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            this.button7.Image = global::OOD2.Properties.Resources.Sink;
-            this.button7.Location = new System.Drawing.Point(101, 88);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(78, 63);
-            this.button7.TabIndex = 6;
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // button8
-            // 
-            this.button8.Image = global::OOD2.Properties.Resources.Source;
-            this.button8.Location = new System.Drawing.Point(17, 157);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(78, 63);
-            this.button8.TabIndex = 7;
-            this.button8.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
