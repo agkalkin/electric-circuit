@@ -1,0 +1,43 @@
+1.Added TypeOfElement NewElement to Circuit class so we know what eleement we need to create.
+
+2.Changed the AddElement method adding a TypeOfElement 
+parameter in Circuit so we know what eleement we need to create.
+
+3,Finished the AddConnection method in Circuit
+
+4.Did MoveElement method in circuit
+
+5.Did RemoveElement
+
+6.Did RemoveConnection 
+(Its the bloody same method as remove element. maybe we can lose one later)
+
+7.We need to modify the accesability of variables, 
+so i can assign an id, or change the constructors. We need to debate this
+
+8.Added IDcounter in Form1.
+
+DAY 2
+
+9. Currently engaged in Record class. I think we need the parameter of the currentlist
+or to return the new list. Still thinking. 
+
+10. Ok so i figured it out. 
+
+Everytime i ADD an element in the FORM i update the list in the RECORD class
+Why? So if i delete the element, i can have it back.(why i return the old list)
+SO if the type of change is Remove i can get back the element.
+
+Everytime i move an element i use the method for its old x and y.
+
+ANd if i add an element i can just remove it from the list.
+
+Keep in mind that i need the parameter currentlist to get the new list.
+
+EASYREDO is just the safety net in case i make something wrong. It reverses the undo.
+
+11. Finished RECORD class. :D
+
+12. Added the buttons to the form.
+
+13. Added UNDO REDO methods to circuit to communicate between the FORM and CIRCUIT
