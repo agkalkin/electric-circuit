@@ -91,6 +91,7 @@ namespace OOD2
 
         }
 
+
         private void DrawArea_Paint(object sender, PaintEventArgs e)
         {
             int[,] matrix = new int[40, 30];
@@ -124,5 +125,20 @@ namespace OOD2
             }
             thecircuit.SearchForClick(e.X, e.Y);
         }
+        private void saveImageToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FileHandler fh = new FileHandler();
+            bool x = fh.SavePng();
+            if (x == true)
+            {
+                MessageBox.Show("Image saved.");
+            }
+            else
+            {
+                MessageBox.Show("Something went wrong.");
+            }
+        }
+
+
     }
 }
