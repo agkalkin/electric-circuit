@@ -127,9 +127,9 @@
             // 
             this.btnAnd.Image = global::OOD2.Properties.Resources.AND;
             this.btnAnd.Location = new System.Drawing.Point(13, 15);
-            this.btnAnd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAnd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAnd.Name = "btnAnd";
-            this.btnAnd.Size = new System.Drawing.Size(58, 51);
+            this.btnAnd.Size = new System.Drawing.Size(83, 72);
             this.btnAnd.TabIndex = 3;
             this.btnAnd.UseVisualStyleBackColor = true;
             this.btnAnd.Click += new System.EventHandler(this.button4_Click);
@@ -137,10 +137,10 @@
             // btnNot
             // 
             this.btnNot.Image = global::OOD2.Properties.Resources.NOT2;
-            this.btnNot.Location = new System.Drawing.Point(76, 15);
-            this.btnNot.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnNot.Location = new System.Drawing.Point(101, 15);
+            this.btnNot.Margin = new System.Windows.Forms.Padding(2);
             this.btnNot.Name = "btnNot";
-            this.btnNot.Size = new System.Drawing.Size(58, 51);
+            this.btnNot.Size = new System.Drawing.Size(76, 72);
             this.btnNot.TabIndex = 4;
             this.btnNot.UseVisualStyleBackColor = true;
             this.btnNot.Click += new System.EventHandler(this.button5_Click);
@@ -148,10 +148,10 @@
             // btnOr
             // 
             this.btnOr.Image = global::OOD2.Properties.Resources.OR;
-            this.btnOr.Location = new System.Drawing.Point(13, 72);
-            this.btnOr.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnOr.Location = new System.Drawing.Point(14, 91);
+            this.btnOr.Margin = new System.Windows.Forms.Padding(2);
             this.btnOr.Name = "btnOr";
-            this.btnOr.Size = new System.Drawing.Size(58, 51);
+            this.btnOr.Size = new System.Drawing.Size(82, 66);
             this.btnOr.TabIndex = 5;
             this.btnOr.UseVisualStyleBackColor = true;
             this.btnOr.Click += new System.EventHandler(this.button6_Click);
@@ -159,10 +159,10 @@
             // btnConnection
             // 
             this.btnConnection.Image = global::OOD2.Properties.Resources.connection2;
-            this.btnConnection.Location = new System.Drawing.Point(76, 128);
-            this.btnConnection.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnConnection.Location = new System.Drawing.Point(101, 161);
+            this.btnConnection.Margin = new System.Windows.Forms.Padding(2);
             this.btnConnection.Name = "btnConnection";
-            this.btnConnection.Size = new System.Drawing.Size(58, 51);
+            this.btnConnection.Size = new System.Drawing.Size(76, 60);
             this.btnConnection.TabIndex = 8;
             this.btnConnection.UseVisualStyleBackColor = true;
             this.btnConnection.Click += new System.EventHandler(this.button9_Click);
@@ -170,10 +170,10 @@
             // btnSink
             // 
             this.btnSink.Image = global::OOD2.Properties.Resources.sink2;
-            this.btnSink.Location = new System.Drawing.Point(76, 72);
-            this.btnSink.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSink.Location = new System.Drawing.Point(101, 91);
+            this.btnSink.Margin = new System.Windows.Forms.Padding(2);
             this.btnSink.Name = "btnSink";
-            this.btnSink.Size = new System.Drawing.Size(58, 51);
+            this.btnSink.Size = new System.Drawing.Size(76, 66);
             this.btnSink.TabIndex = 6;
             this.btnSink.UseVisualStyleBackColor = true;
             this.btnSink.Click += new System.EventHandler(this.button7_Click);
@@ -181,10 +181,10 @@
             // btnSource
             // 
             this.btnSource.Image = global::OOD2.Properties.Resources.source2;
-            this.btnSource.Location = new System.Drawing.Point(13, 128);
-            this.btnSource.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSource.Location = new System.Drawing.Point(13, 161);
+            this.btnSource.Margin = new System.Windows.Forms.Padding(2);
             this.btnSource.Name = "btnSource";
-            this.btnSource.Size = new System.Drawing.Size(58, 51);
+            this.btnSource.Size = new System.Drawing.Size(82, 60);
             this.btnSource.TabIndex = 7;
             this.btnSource.UseVisualStyleBackColor = true;
             this.btnSource.Click += new System.EventHandler(this.button8_Click);
@@ -277,7 +277,7 @@
             // DrawArea
             // 
             this.DrawArea.Location = new System.Drawing.Point(217, 32);
-            this.DrawArea.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DrawArea.Margin = new System.Windows.Forms.Padding(2);
             this.DrawArea.Name = "DrawArea";
             this.DrawArea.Size = new System.Drawing.Size(649, 452);
             this.DrawArea.TabIndex = 14;
