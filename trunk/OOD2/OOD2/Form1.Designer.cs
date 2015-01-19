@@ -31,15 +31,15 @@
             this.btnStart = new System.Windows.Forms.Button();
             this.btnUndo = new System.Windows.Forms.Button();
             this.btnRedo = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
+            this.btnConnection = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
+            this.btnAnd = new System.Windows.Forms.Button();
+            this.btnNot = new System.Windows.Forms.Button();
+            this.btnOr = new System.Windows.Forms.Button();
+            this.btnSink = new System.Windows.Forms.Button();
+            this.btnSource = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,6 +53,7 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.DrawArea = new System.Windows.Forms.Panel();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -87,15 +88,15 @@
             this.btnRedo.UseVisualStyleBackColor = true;
             this.btnRedo.Click += new System.EventHandler(this.btnRedo_Click);
             // 
-            // button9
+            // btnConnection
             // 
-            this.button9.Image = global::OOD2.Properties.Resources.connection;
-            this.button9.Location = new System.Drawing.Point(101, 157);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(78, 63);
-            this.button9.TabIndex = 8;
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
+            this.btnConnection.Image = global::OOD2.Properties.Resources.connection;
+            this.btnConnection.Location = new System.Drawing.Point(101, 157);
+            this.btnConnection.Name = "btnConnection";
+            this.btnConnection.Size = new System.Drawing.Size(78, 63);
+            this.btnConnection.TabIndex = 8;
+            this.btnConnection.UseVisualStyleBackColor = true;
+            this.btnConnection.Click += new System.EventHandler(this.button9_Click);
             // 
             // button10
             // 
@@ -117,14 +118,14 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button4);
+            this.groupBox1.Controls.Add(this.btnAnd);
             this.groupBox1.Controls.Add(this.button11);
-            this.groupBox1.Controls.Add(this.button5);
+            this.groupBox1.Controls.Add(this.btnNot);
             this.groupBox1.Controls.Add(this.button10);
-            this.groupBox1.Controls.Add(this.button6);
-            this.groupBox1.Controls.Add(this.button9);
-            this.groupBox1.Controls.Add(this.button7);
-            this.groupBox1.Controls.Add(this.button8);
+            this.groupBox1.Controls.Add(this.btnOr);
+            this.groupBox1.Controls.Add(this.btnConnection);
+            this.groupBox1.Controls.Add(this.btnSink);
+            this.groupBox1.Controls.Add(this.btnSource);
             this.groupBox1.Location = new System.Drawing.Point(12, 32);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(200, 294);
@@ -132,55 +133,55 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Toolbox";
             // 
-            // button4
+            // btnAnd
             // 
-            this.button4.Image = global::OOD2.Properties.Resources.AND;
-            this.button4.Location = new System.Drawing.Point(17, 19);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(78, 63);
-            this.button4.TabIndex = 3;
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.btnAnd.Image = global::OOD2.Properties.Resources.AND;
+            this.btnAnd.Location = new System.Drawing.Point(17, 19);
+            this.btnAnd.Name = "btnAnd";
+            this.btnAnd.Size = new System.Drawing.Size(78, 63);
+            this.btnAnd.TabIndex = 3;
+            this.btnAnd.UseVisualStyleBackColor = true;
+            this.btnAnd.Click += new System.EventHandler(this.button4_Click);
             // 
-            // button5
+            // btnNot
             // 
-            this.button5.Image = global::OOD2.Properties.Resources.NOT;
-            this.button5.Location = new System.Drawing.Point(101, 19);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(78, 63);
-            this.button5.TabIndex = 4;
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.btnNot.Image = global::OOD2.Properties.Resources.NOT;
+            this.btnNot.Location = new System.Drawing.Point(101, 19);
+            this.btnNot.Name = "btnNot";
+            this.btnNot.Size = new System.Drawing.Size(78, 63);
+            this.btnNot.TabIndex = 4;
+            this.btnNot.UseVisualStyleBackColor = true;
+            this.btnNot.Click += new System.EventHandler(this.button5_Click);
             // 
-            // button6
+            // btnOr
             // 
-            this.button6.Image = global::OOD2.Properties.Resources.OR;
-            this.button6.Location = new System.Drawing.Point(17, 88);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(78, 63);
-            this.button6.TabIndex = 5;
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.btnOr.Image = global::OOD2.Properties.Resources.OR;
+            this.btnOr.Location = new System.Drawing.Point(17, 88);
+            this.btnOr.Name = "btnOr";
+            this.btnOr.Size = new System.Drawing.Size(78, 63);
+            this.btnOr.TabIndex = 5;
+            this.btnOr.UseVisualStyleBackColor = true;
+            this.btnOr.Click += new System.EventHandler(this.button6_Click);
             // 
-            // button7
+            // btnSink
             // 
-            this.button7.Image = global::OOD2.Properties.Resources.Sink;
-            this.button7.Location = new System.Drawing.Point(101, 88);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(78, 63);
-            this.button7.TabIndex = 6;
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.btnSink.Image = global::OOD2.Properties.Resources.Sink;
+            this.btnSink.Location = new System.Drawing.Point(101, 88);
+            this.btnSink.Name = "btnSink";
+            this.btnSink.Size = new System.Drawing.Size(78, 63);
+            this.btnSink.TabIndex = 6;
+            this.btnSink.UseVisualStyleBackColor = true;
+            this.btnSink.Click += new System.EventHandler(this.button7_Click);
             // 
-            // button8
+            // btnSource
             // 
-            this.button8.Image = global::OOD2.Properties.Resources.Source;
-            this.button8.Location = new System.Drawing.Point(17, 157);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(78, 63);
-            this.button8.TabIndex = 7;
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
+            this.btnSource.Image = global::OOD2.Properties.Resources.Source;
+            this.btnSource.Location = new System.Drawing.Point(17, 157);
+            this.btnSource.Name = "btnSource";
+            this.btnSource.Size = new System.Drawing.Size(78, 63);
+            this.btnSource.TabIndex = 7;
+            this.btnSource.UseVisualStyleBackColor = true;
+            this.btnSource.Click += new System.EventHandler(this.button8_Click);
             // 
             // groupBox2
             // 
@@ -202,7 +203,7 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(867, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(850, 24);
             this.menuStrip1.TabIndex = 13;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -266,17 +267,27 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // DrawArea
+            // 
+            this.DrawArea.Location = new System.Drawing.Point(218, 41);
+            this.DrawArea.Name = "DrawArea";
+            this.DrawArea.Size = new System.Drawing.Size(622, 472);
+            this.DrawArea.TabIndex = 14;
+            this.DrawArea.Paint += new System.Windows.Forms.PaintEventHandler(this.DrawArea_Paint);
+            this.DrawArea.MouseClick += new System.Windows.Forms.MouseEventHandler(this.DrawArea_MouseClick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(867, 524);
+            this.ClientSize = new System.Drawing.Size(850, 525);
+            this.Controls.Add(this.DrawArea);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Digital Circuit";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint_1);
             this.groupBox1.ResumeLayout(false);
@@ -293,12 +304,12 @@
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Button btnUndo;
         private System.Windows.Forms.Button btnRedo;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button btnAnd;
+        private System.Windows.Forms.Button btnNot;
+        private System.Windows.Forms.Button btnOr;
+        private System.Windows.Forms.Button btnSink;
+        private System.Windows.Forms.Button btnSource;
+        private System.Windows.Forms.Button btnConnection;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -315,6 +326,7 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Panel DrawArea;
     }
 }
 

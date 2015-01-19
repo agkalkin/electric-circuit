@@ -20,6 +20,7 @@ namespace OOD2
         public Circuit()
         {
             undo_redo = new Record();
+            elements=new List<IElement>();
         }
 
         public void Undo(TypeOfChange lastchange)
@@ -48,28 +49,30 @@ namespace OOD2
             newconnection.Drawing();
             return true;
         }
-        public Boolean AddElement(int id,TypeOfElement newelement,int mousex,int mousey)
+        public Boolean AddElement(TypeOfElement newelement,int mousex,int mousey)
         {
             if (newelement == TypeOfElement.SOURCE)
             {
                 Source newsource = new Source(GetId(), mousex, mousey);
-                //newsource.SetId(id);
                 elements.Add(newsource);
                 return true;
             }
             else if (newelement == TypeOfElement.ANDGATE)
             {
                 AND newand = new AND(GetId(), mousex, mousey);
+                elements.Add(newand);
                 return true;
             }
             else if(newelement==TypeOfElement.NOTGATE)
             {
                 NOT newnot = new NOT(GetId(), mousex, mousey);
+                elements.Add(newnot);
                 return true;
             }
             else if(newelement==TypeOfElement.ORGATE)
             {
-                OR newor = new OR(id, mousex, mousey);
+                OR newor = new OR(GetId(), mousex, mousey);
+                elements.Add(newor);
                 return true; 
             }
             else if(newelement==TypeOfElement.SINK)
