@@ -37,63 +37,32 @@ namespace OOD2
 
         public abstract Boolean MoveElement(int x, int y);
 
-        public bool Drawing()
-        {
-            return true;
-        }
+        public abstract bool Drawing();
 
-        public abstract int id
-        {
-            get;
-             set;
-        }
+        public virtual int id { get; protected set; }
 
-        public abstract int input
-        {
-            get;
-             set;
-        }
+        /// <summary>
+        /// Number of inputs
+        /// </summary>
+        public virtual int input { get; protected set; }
 
-        public abstract int output
-        {
-            get;
-             set;
-        }
+        /// <summary>
+        /// Number of outputs
+        /// </summary>
+        public virtual int output { get; protected set; }
 
-        public abstract int maxInput
-        {
-            get;
-             set;
-        }
+        public virtual int maxInput { get; protected set; }
 
-        public abstract int maxOutput
-        {
-            get;
-             set;
-        }
+        public virtual int maxOutput { get; protected set; }
 
-        public abstract int oldX
-        {
-            get;
-             set;
-        }
+        public virtual int oldX { get; protected set; }
 
-        public abstract int oldY
-        {
-            get;
-             set;
-        }
+        public virtual int oldY { get; protected set; }
 
-        public abstract int x
-        {
-            get;
-            set;
-        }
+        public virtual int x { get; protected set; }
 
-        public abstract int y
-        {
-            get;
-            set;
-        }
+        public virtual int y { get; protected set; }
+
+        public virtual int logicValue { get; protected set; }
     }
 }

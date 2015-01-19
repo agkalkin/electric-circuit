@@ -13,6 +13,8 @@ namespace OOD2
             this.x = x;
             this.y = y;
             this.id = id;
+            this.maxInput = 2;
+            this.maxOutput = 1;
         }
         public override bool Drawing(System.Drawing.Graphics gr)
         {
@@ -44,57 +46,19 @@ namespace OOD2
         }
 
 
-        public override int id
+        public override bool Drawing()
         {
-            get;
-            set;
+            return true;
         }
 
-        public override int input
-        {
-            get;
-            set;
-        }
-        public override int output
-        {
-            get;
-            set;
-        }
+        /// <summary>
+        /// Max number of inputs
+        /// </summary>
+        public override int maxInput { get; protected set; }
 
-        public override int maxInput
-        {
-            get;
-            set;
-        }
-
-        public override int maxOutput
-        {
-            get;
-            set;
-        }
-
-        public override int oldX
-        {
-            get;
-            set;
-        }
-
-        public override int oldY
-        {
-            get;
-            set;
-        }
-
-        public override int x
-        {
-            get;
-            set;
-        }
-
-        public override int y
-        {
-            get;
-            set;
-        }
+        /// <summary>
+        /// Max number of outputs
+        /// </summary>
+        public override int maxOutput { get; protected set; }
     }
 }

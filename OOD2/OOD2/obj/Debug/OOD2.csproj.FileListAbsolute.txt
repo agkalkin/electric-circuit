@@ -18,7 +18,6 @@ D:\Work\trunk\OOD2\OOD2\bin\Debug\OOD2.pdb
 C:\ood\trunk\OOD2\OOD2\bin\Debug\OOD2.exe.config
 C:\ood\trunk\OOD2\OOD2\obj\Debug\OOD2.exe
 C:\ood\trunk\OOD2\OOD2\obj\Debug\OOD2.pdb
-D:\Work\trunk\OOD2\OOD2\obj\Debug\OOD2.csprojResolveAssemblyReference.cache
 D:\Fontys\Block 6\OOD2\ood2-project\trunk\OOD2\OOD2\bin\Debug\OOD2.exe.config
 D:\Fontys\Block 6\OOD2\ood2-project\trunk\OOD2\OOD2\obj\Debug\OOD2.exe
 D:\Fontys\Block 6\OOD2\ood2-project\trunk\OOD2\OOD2\obj\Debug\OOD2.pdb
