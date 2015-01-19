@@ -16,11 +16,15 @@ namespace OOD2
         List<IElement> elements;
         public Record undo_redo;
         private static int lastId = 1;
+        Pen color;
 
         public Circuit()
         {
             undo_redo = new Record();
             elements=new List<IElement>();
+            cTrue = Color.Green;
+            cFalse = Color.Red;
+            cUnknown = Color.Black;
         }
 
         public void Undo(TypeOfChange lastchange)
@@ -96,8 +100,10 @@ namespace OOD2
             if(elements.Count!=0)
             elements[elements.Count-1].Drawing(e);
         }
+        
         public Boolean AddConnection(bool conntrue)
         {
+                
                 IElement newconnection;
                 newconnection = new Connection(GetId(), firstSelectedId.id, secondSelectedId.id, firstSelectedId.x - 5, firstSelectedId.y, secondSelectedId.x, secondSelectedId.y - 5);
                 elements.Add(newconnection);
@@ -163,9 +169,11 @@ namespace OOD2
         {
             return -1;
         }
-        void AssignColor()
+        public void AssignColor(Color conntrue,Color connfalse, Color connunknown)
         {
-
+            cTrue = conntrue;
+            cFalse = connfalse;
+            connunknown = connfalse;
         }
         public void UpdateUndoRedo()
         {
