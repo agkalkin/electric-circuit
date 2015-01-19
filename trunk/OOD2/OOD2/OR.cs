@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace OOD2
 {
+    [Serializable]
     class OR : Gate
     {
         public OR(int id,int x, int y) : base(id, x, y) 

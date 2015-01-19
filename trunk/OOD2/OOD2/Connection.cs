@@ -7,6 +7,7 @@ using System.Drawing;
 
 namespace OOD2
 {
+    [Serializable]
     class Connection:Logic
     {
         //IDs of elements that are connected to the front and back

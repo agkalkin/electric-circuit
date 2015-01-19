@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace OOD2
 {
+    [Serializable]
     class Sink:Logic
     {
         public override int logicValue { get; protected set; }

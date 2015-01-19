@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace OOD2
 {
+    [Serializable]
     class AND : Gate
     {
         public AND(int id, int x, int y) : base(id ,x, y) 
