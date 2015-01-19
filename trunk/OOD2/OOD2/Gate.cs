@@ -21,7 +21,8 @@ namespace OOD2
 
             return output;
         }
-
+        public virtual bool Drawing(System.Drawing.Graphics gr)
+        { return true; }
         /// <summary>
         /// Takes input and generates output
         /// </summary>

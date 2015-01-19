@@ -91,5 +91,10 @@ namespace OOD2
             get;
             set;
         }
+            public override bool Drawing(System.Drawing.Graphics gr)
+        {
+            gr.DrawImage(OOD2.Properties.Resources.NOT, x, y);
+            return base.Drawing();
+        }
     }
 }

@@ -18,7 +18,7 @@ namespace OOD2
         int x { get; }
         int y { get; }
 
-        bool Drawing();
+        bool Drawing(System.Drawing.Graphics gr);
 
         Boolean MoveElement(int x, int y);
     }
