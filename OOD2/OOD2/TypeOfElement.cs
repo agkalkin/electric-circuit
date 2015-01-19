@@ -13,6 +13,7 @@ namespace OOD2
         ORGATE,
         NOTGATE,
         SINK,
-        SOURCE
+        SOURCE,
+        NONE
     }
 }
