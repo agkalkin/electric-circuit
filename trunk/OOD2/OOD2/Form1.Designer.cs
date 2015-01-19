@@ -228,7 +228,7 @@
             // 
             // btnNot
             // 
-            this.btnNot.Image = global::OOD2.Properties.Resources.NOT;
+            this.btnNot.Image = global::OOD2.Properties.Resources.NOT2;
             this.btnNot.Location = new System.Drawing.Point(101, 19);
             this.btnNot.Name = "btnNot";
             this.btnNot.Size = new System.Drawing.Size(78, 63);
