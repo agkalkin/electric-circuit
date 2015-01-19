@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace OOD2
 {
+
+        [Serializable]
     abstract class Logic: IElement
     {
+       
         //Logic value of the element (0, 1 or "unknown"
         public Logic(int x, int y) { }
         public virtual Boolean MoveElement(int x, int y)

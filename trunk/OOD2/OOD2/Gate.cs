@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace OOD2
 {
+
+        [Serializable]
     abstract class Gate: IElement
     {
+      
         public Gate(int id,int x, int y) { }
         /// <summary>
         /// Takes two inputs and generates output
