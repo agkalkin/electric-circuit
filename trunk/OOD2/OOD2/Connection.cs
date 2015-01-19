@@ -20,7 +20,7 @@ namespace OOD2
         Pen conn;
         public override bool Drawing(System.Drawing.Graphics gr)
         {
-
+            Pen conn = new Pen(Color.Black, 3);
             gr.DrawLine(conn, x1, x2, y1, y2);
             return base.Drawing();
         }
@@ -35,8 +35,9 @@ namespace OOD2
             this.y1 = y1;
             this.y2 = y2+25;
             
+            
         }
-        public void ChangeColor(Pen pens)
+        public void ChangeColor(Pen pens)//changes the pen color in the draw method for the connection
         {
             conn = pens;
         }

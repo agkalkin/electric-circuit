@@ -12,18 +12,18 @@ namespace OOD2
 {
     public partial class Form1 : Form
     {
+        int x, y;
         TypeOfElement NewElement;
         Circuit thecircuit;
-        int idcounter;
-        TypeOfChange lastchange;
-        IElement addedelement;
-        bool connvalue;
+        TypeOfChange lastchange;//saves the last action type the user done.
+        bool connvalue;// Set the connection creation as true after you press the connection button
         public Form1()
         {
             InitializeComponent();
             thecircuit = new Circuit();
             NewElement = TypeOfElement.NONE;
-            
+            x = 0;
+            y = 0;
             connvalue = false;
                         
         }
@@ -97,31 +97,15 @@ namespace OOD2
 
         private void DrawArea_Paint(object sender, PaintEventArgs e)
         {
-            //int[,] matrix = new int[40, 30];
-            //int height = 0;
-            //int width = 0;
-            //int size = 15;
-            //Graphics gr = e.Graphics;
-            //for (int i = 1; i <= 40; i++)
-            //{
-            //    height = height + size;
-            //    width = 0;
-            //    for (int j = 1; j <= 30; j++)
-            //    {
-            //        gr.DrawRectangle(Pens.Black, height, width, size, size);
-            //        width = width + size;
-            //    }
-            //}
-            thecircuit.Draw(e.Graphics);
-                
+            thecircuit.Draw(e.Graphics);        
          }
 
         private void DrawArea_MouseClick(object sender, MouseEventArgs e)
         {
-            if (thecircuit.SearchForClick(e.X, e.Y, connvalue))
+            if (thecircuit.SearchForClick(e.X,e.Y, connvalue))// if it returns true it creates a connection between the two previosly selected elements
             { DrawArea.Refresh(); connvalue = false; }
 
-           if(NewElement!=TypeOfElement.NONE && NewElement!=TypeOfElement.CONNECTION)
+           if(NewElement!=TypeOfElement.NONE && NewElement!=TypeOfElement.CONNECTION)//it creates an element, adds it to the list, and draws it on the form.
             {  
                     thecircuit.AddElement(NewElement, e.X, e.Y);
                     NewElement = TypeOfElement.NONE;
@@ -150,6 +134,8 @@ namespace OOD2
                 MessageBox.Show("Something went wrong.");
             }
         }
+
+        
 
         
 

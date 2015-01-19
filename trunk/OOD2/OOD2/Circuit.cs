@@ -46,12 +46,12 @@ namespace OOD2
         }
         
         public bool SearchForClick(int x,int y,bool conntrue)
-        {
+        {//when you press click on an element on the form it saves it. Does this two times and if its valid, creates connection between those elements
             foreach (IElement i in elements)
             {
                 if (!(i is Connection))
                 {
-                    if (x > i.x - 70 && x < i.x + 58 && y > i.y - 70 && y < y + 58)
+                    if (i.x<x && x<i.x+70 && i.y+50>y && y>i.y)
                     {
                         if (firstSelectedId==null)
                         { firstSelectedId = i; break; }
@@ -74,7 +74,7 @@ namespace OOD2
                 
                 
             }
-            if (conntrue == true && secondSelectedId != null)
+            if (conntrue == true && secondSelectedId != null)//if there is a second selected element and the connection button was pressed adds a connection
             {
                 AddConnection(conntrue);
                 ClearSelecter();
@@ -83,34 +83,34 @@ namespace OOD2
             return false;
             
         }
-        public void ClearSelecter()
+        public void ClearSelecter() // it clears the first selected element and the second selected element
         {
             firstSelectedId = null;
             secondSelectedId = null;
         }
-        public void Draw(Graphics e)
+        public void Draw(Graphics e)//draws all the elements in the list of elements
         {
             foreach(IElement i in elements)
             {
                 i.Drawing(e);
             }
         }
-        public void DrawLast(Graphics e)
+        public void DrawLast(Graphics e) // draws the last element in the element list
         {
             if(elements.Count!=0)
             elements[elements.Count-1].Drawing(e);
         }
         
-        public Boolean AddConnection(bool conntrue)
+        public Boolean AddConnection(bool conntrue)//adds a connection
         {
                 
                 IElement newconnection;
-                newconnection = new Connection(GetId(), firstSelectedId.id, secondSelectedId.id, firstSelectedId.x - 5, firstSelectedId.y, secondSelectedId.x, secondSelectedId.y - 5);
+                newconnection = new Connection(GetId(), firstSelectedId.id, secondSelectedId.id, firstSelectedId.x, firstSelectedId.y, secondSelectedId.x, secondSelectedId.y);
                 elements.Add(newconnection);
                 return true;
            
         }
-        public Boolean AddElement(TypeOfElement newelement,int mousex,int mousey)
+        public Boolean AddElement(TypeOfElement newelement,int mousex,int mousey)//it creates an element based on the new element desired by the user
         {
             if (newelement == TypeOfElement.SOURCE)
             {
@@ -169,13 +169,13 @@ namespace OOD2
         {
             return -1;
         }
-        public void AssignColor(Color conntrue,Color connfalse, Color connunknown)
+        public void AssignColor(Color conntrue,Color connfalse, Color connunknown) // assigns the custom colors to the default ones
         {
             cTrue = conntrue;
             cFalse = connfalse;
             connunknown = connfalse;
         }
-        public void UpdateUndoRedo()
+        public void UpdateUndoRedo() // updates the undo redo element list.
         {
             undo_redo.Update(elements);
         }
