@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.btnStart = new System.Windows.Forms.Button();
             this.btnUndo = new System.Windows.Forms.Button();
             this.btnRedo = new System.Windows.Forms.Button();
@@ -209,7 +210,7 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(877, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(859, 24);
             this.menuStrip1.TabIndex = 13;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -276,10 +277,12 @@
             // 
             // DrawArea
             // 
-            this.DrawArea.Location = new System.Drawing.Point(217, 32);
+            this.DrawArea.BackColor = System.Drawing.Color.Transparent;
+            this.DrawArea.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("DrawArea.BackgroundImage")));
+            this.DrawArea.Location = new System.Drawing.Point(229, 32);
             this.DrawArea.Margin = new System.Windows.Forms.Padding(2);
             this.DrawArea.Name = "DrawArea";
-            this.DrawArea.Size = new System.Drawing.Size(649, 452);
+            this.DrawArea.Size = new System.Drawing.Size(604, 452);
             this.DrawArea.TabIndex = 14;
             this.DrawArea.Paint += new System.Windows.Forms.PaintEventHandler(this.DrawArea_Paint);
             this.DrawArea.MouseClick += new System.Windows.Forms.MouseEventHandler(this.DrawArea_MouseClick);
@@ -288,7 +291,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(877, 495);
+            this.ClientSize = new System.Drawing.Size(859, 497);
             this.Controls.Add(this.DrawArea);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
