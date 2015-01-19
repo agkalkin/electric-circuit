@@ -40,7 +40,6 @@ namespace OOD2
 
         public abstract Boolean MoveElement(int x, int y);
 
-        public abstract bool Drawing();
 
         public virtual int id { get; protected set; }
 

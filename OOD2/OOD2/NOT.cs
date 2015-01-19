@@ -42,10 +42,7 @@ namespace OOD2
             return true;
         }
 
-        public override bool Drawing()
-        {
-            return true;
-        }
+        
 
         /// <summary>
         /// Max number of inputs
@@ -59,7 +56,7 @@ namespace OOD2
             public override bool Drawing(System.Drawing.Graphics gr)
         {
             gr.DrawImage(OOD2.Properties.Resources.NOT, x, y);
-            return base.Drawing();
+            return true;
         }
     }
 }

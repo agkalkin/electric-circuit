@@ -47,10 +47,7 @@ namespace OOD2
             return true;
         }
 
-        public override bool Drawing()
-        {
-            return true;
-        }
+        
 
         /// <summary>
         /// Max number of inputs
