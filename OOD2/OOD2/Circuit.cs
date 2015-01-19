@@ -40,13 +40,41 @@ namespace OOD2
         {
             return lastId++;
         }
-
+        
+        public void SearchForClick(int x,int y)
+        {
+            foreach (IElement i in elements)
+            {
+                if (!(i is Connection))
+                {
+                    if (x > i.x - 70 && x < i.x + 70 && y < i.y - 50 && y > y + 50)
+                    {
+                        if (firstSelectedId == null)
+                        { firstSelectedId = i; }
+                        else if(secondSelectedId!=null)
+                        {firstSelectedId=i;}
+                        else
+                        { secondSelectedId = i; }
+                    }
+                }
+            }
+        }
+        public void Draw(Graphics e)
+        {
+            foreach(IElement i in elements)
+            {
+                i.Drawing(e);
+            }
+        }
+        public void DrawLast(Graphics e)
+        {
+            elements[elements.Count].Drawing(e);
+        }
         public Boolean AddConnection()
         {
             IElement newconnection;
-            newconnection = new Connection(firstSelectedId.id, secondSelectedId.id);
+            newconnection = new Connection(GetId(),firstSelectedId.id, secondSelectedId.id,firstSelectedId.x-5,firstSelectedId.y,secondSelectedId.x,secondSelectedId.y-5);
             elements.Add(newconnection);
-            newconnection.Drawing();
             return true;
         }
         public Boolean AddElement(TypeOfElement newelement,int mousex,int mousey)

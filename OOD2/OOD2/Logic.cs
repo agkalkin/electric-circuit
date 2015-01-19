@@ -15,7 +15,8 @@ namespace OOD2
         {
             return true;
         }
-
+        public virtual bool Drawing(System.Drawing.Graphics gr)
+        { return true; }
         public int id
         {
             get { throw new NotImplementedException(); }

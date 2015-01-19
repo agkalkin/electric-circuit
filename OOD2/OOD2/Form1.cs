@@ -107,7 +107,9 @@ namespace OOD2
                     gr.DrawRectangle(Pens.Black, height, width, size, size);
                     width = width + size;
                 }
-            } 
+            }
+            thecircuit.Draw(e.Graphics);
+            
         }
 
         private void DrawArea_MouseClick(object sender, MouseEventArgs e)
@@ -118,9 +120,9 @@ namespace OOD2
                     NewElement = TypeOfElement.NONE;
                     thecircuit.UpdateUndoRedo();
                     lastchange = TypeOfChange.ADD;
+                    DrawArea.Refresh();
             }
-                    
-         
+            thecircuit.SearchForClick(e.X, e.Y);
         }
     }
 }

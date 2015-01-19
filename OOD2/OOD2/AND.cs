@@ -14,7 +14,11 @@ namespace OOD2
             this.y = y;
             this.id = id;
         }
-
+        public override bool Drawing(System.Drawing.Graphics gr)
+        {
+            gr.DrawImage(OOD2.Properties.Resources.AND, x, y);
+            return base.Drawing();
+        }
         /// <summary>
         /// Generates output
         /// </summary>
