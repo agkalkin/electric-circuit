@@ -47,7 +47,7 @@ namespace OOD2
             {
                 if (!(i is Connection))
                 {
-                    if (x > i.x - 70 && x < i.x + 70 && y < i.y - 50 && y > y + 50)
+                    if (x > i.x - 70 && x < i.x + 70 && y > i.y - 50 && y < y + 50)
                     {
                         if (firstSelectedId == null)
                         { firstSelectedId = i; }
