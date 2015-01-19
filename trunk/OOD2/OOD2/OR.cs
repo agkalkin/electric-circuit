@@ -19,7 +19,7 @@ namespace OOD2
         public override bool Drawing(System.Drawing.Graphics gr)
         {
             gr.DrawImage(OOD2.Properties.Resources.OR, x, y);
-            return base.Drawing();
+            return true;
         }
 
         /// <summary>
