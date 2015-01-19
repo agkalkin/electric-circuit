@@ -25,17 +25,23 @@ namespace OOD2
             return true;
         }
 
-        public Boolean SavePng()
+        public Boolean SavePng(int formLocX, int formLocY, int offX, int offY)
         {
             try
             {
+                int x = 228; //X of grid
+                int y = 31; //Y of grid
+                int width = 620; //Width of image
+                int height = 460; //Height of image
 
-                Bitmap image = new Bitmap(622, 472,
-                       System.Drawing.Imaging.PixelFormat.Format32bppArgb);
+                Bitmap image = new Bitmap(width, height, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
                 Graphics g = Graphics.FromImage(image);
-                g.CopyFromScreen(218, 41, 218, 41,
-                         new System.Drawing.Size(622, 472),
-                         CopyPixelOperation.SourceCopy);
+
+                //g.CopyFromScreen(218, 41, 218, 41, new System.Drawing.Size(622, 472), CopyPixelOperation.SourceCopy);
+                x = x + formLocX;
+                y = y + formLocY + 24;
+                g.CopyFromScreen(x, y, 0, 0, new System.Drawing.Size(width, height), CopyPixelOperation.SourceCopy);
+
                 SaveFileDialog dlg = new SaveFileDialog();
                 dlg.DefaultExt = "png";
                 dlg.Filter = "Png Files|*.png";
@@ -43,17 +49,7 @@ namespace OOD2
                 if (res == System.Windows.Forms.DialogResult.OK)
                     image.Save(dlg.FileName, ImageFormat.Png);
                 return true;
-                //try
-                //{
-                //    Rectangle s_rect = window.Bounds;
-                //    using (Bitmap bmp = new Bitmap(s_rect.Width, s_rect.Height))
-                //    {
-                //        using (Graphics gScreen = Graphics.FromImage(bmp))
-                //            gScreen.CopyFromScreen(s_rect.Location, Point.Empty, s_rect.Size);
-                //        bmp.Save(file, System.Drawing.Imaging.ImageFormat.Png);
-                //    }
-                //}
-                //catch (Exception ex) { Logger.logwriter(ex.Message, ex.StackTrace); }
+
             }
             catch(Exception ex)
             {
