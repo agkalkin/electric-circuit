@@ -18,7 +18,11 @@ namespace OOD2
             this.y = y;
             this.id = id;
         }
-
+        public override bool Drawing(System.Drawing.Graphics gr)
+        {
+            gr.DrawImage(OOD2.Properties.Resources.sink2, x, y);
+            return true;
+        }
         public override Boolean MoveElement(int x, int y)
         {
             this.x = x;

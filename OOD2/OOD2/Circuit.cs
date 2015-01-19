@@ -47,18 +47,25 @@ namespace OOD2
             {
                 if (!(i is Connection))
                 {
-                    if (x > i.x - 70 && x < i.x + 70 && y > i.y - 50 && y < y + 50)
+                    if (x > i.x - 70 && x < i.x + 58 && y > i.y - 70 && y < y + 58)
                     {
                         if (firstSelectedId==null)
-                        { firstSelectedId = i; }
+                        { firstSelectedId = i; break; }
                         else if(firstSelectedId!=null && secondSelectedId !=null)
                         { firstSelectedId = i;
                         secondSelectedId = null;
+                        break;
                         }
                         else if (firstSelectedId != null)
-                        { secondSelectedId = i; }
-                        break;
+                        { secondSelectedId = i; break; }
+                        else if(firstSelectedId==secondSelectedId)
+                        {
+                            ClearSelecter();
+                            break;
+                        }
+                        
                     }
+                    
                 }
                 
                 
@@ -66,6 +73,7 @@ namespace OOD2
             if (conntrue == true && secondSelectedId != null)
             {
                 AddConnection(conntrue);
+                ClearSelecter();
                 return true;
             }
             return false;

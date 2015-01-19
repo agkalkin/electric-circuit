@@ -61,8 +61,9 @@ namespace OOD2
         /// </summary>
         public override int maxOutput { get; protected set; }
 
-        public override bool Drawing()
+        public override bool Drawing(System.Drawing.Graphics gr)
         {
+            gr.DrawImage(OOD2.Properties.Resources.source2, x, y);
             return true;
         }
     }

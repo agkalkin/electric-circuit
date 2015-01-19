@@ -13,7 +13,6 @@ namespace OOD2
         //IDs of elements that are connected to the front and back
         int endID;
         int frontID;
-        int id;
         int x1;
         int x2;
         int y1;
