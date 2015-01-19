@@ -47,18 +47,19 @@ namespace OOD2
         private void btnUndo_Click(object sender, EventArgs e)
         {
             thecircuit.Undo(lastchange);
+            DrawArea.Refresh();
         }
 
         private void btnRedo_Click(object sender, EventArgs e)
         {
             thecircuit.Redo();
+            DrawArea.Refresh();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
             NewElement = TypeOfElement.NOTGATE;
-            
-            
+                       
         }
 
         private void button6_Click(object sender, EventArgs e)

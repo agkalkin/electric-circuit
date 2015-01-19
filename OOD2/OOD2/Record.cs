@@ -23,13 +23,13 @@ namespace OOD2
             if (currentchange == TypeOfChange.ADD)
             {
                 easyredo = currentlist;
-                currentlist.RemoveAt(currentlist.Count);
+                currentlist.RemoveAt(currentlist.Count-1);
                 return currentlist;
             }
             else if (currentchange == TypeOfChange.MOVE)
             {
                 easyredo = currentlist;
-                currentlist[currentlist.Count].MoveElement(currentlist[currentlist.Count].oldX, currentlist[currentlist.Count].oldY);
+                currentlist[currentlist.Count-1].MoveElement(currentlist[currentlist.Count-1].oldX, currentlist[currentlist.Count-1].oldY);
                 return currentlist;
             }
             else if (currentchange == TypeOfChange.REMOVE)
