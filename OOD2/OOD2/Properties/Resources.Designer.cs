@@ -83,6 +83,16 @@ namespace OOD2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap connection2 {
+            get {
+                object obj = ResourceManager.GetObject("connection2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap NOT {
             get {
                 object obj = ResourceManager.GetObject("NOT", resourceCulture);
@@ -113,9 +123,29 @@ namespace OOD2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap sink2 {
+            get {
+                object obj = ResourceManager.GetObject("sink2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Source {
             get {
                 object obj = ResourceManager.GetObject("Source", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap source2 {
+            get {
+                object obj = ResourceManager.GetObject("source2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
