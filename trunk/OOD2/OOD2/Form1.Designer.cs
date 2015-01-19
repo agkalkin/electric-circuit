@@ -31,15 +31,9 @@
             this.btnStart = new System.Windows.Forms.Button();
             this.btnUndo = new System.Windows.Forms.Button();
             this.btnRedo = new System.Windows.Forms.Button();
-            this.btnConnection = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnAnd = new System.Windows.Forms.Button();
-            this.btnNot = new System.Windows.Forms.Button();
-            this.btnOr = new System.Windows.Forms.Button();
-            this.btnSink = new System.Windows.Forms.Button();
-            this.btnSource = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,6 +48,12 @@
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.DrawArea = new System.Windows.Forms.Panel();
+            this.btnAnd = new System.Windows.Forms.Button();
+            this.btnNot = new System.Windows.Forms.Button();
+            this.btnOr = new System.Windows.Forms.Button();
+            this.btnConnection = new System.Windows.Forms.Button();
+            this.btnSink = new System.Windows.Forms.Button();
+            this.btnSource = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -87,16 +87,6 @@
             this.btnRedo.Text = "Redo";
             this.btnRedo.UseVisualStyleBackColor = true;
             this.btnRedo.Click += new System.EventHandler(this.btnRedo_Click);
-            // 
-            // btnConnection
-            // 
-            this.btnConnection.Image = global::OOD2.Properties.Resources.connection;
-            this.btnConnection.Location = new System.Drawing.Point(101, 157);
-            this.btnConnection.Name = "btnConnection";
-            this.btnConnection.Size = new System.Drawing.Size(78, 63);
-            this.btnConnection.TabIndex = 8;
-            this.btnConnection.UseVisualStyleBackColor = true;
-            this.btnConnection.Click += new System.EventHandler(this.button9_Click);
             // 
             // button10
             // 
@@ -132,56 +122,6 @@
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Toolbox";
-            // 
-            // btnAnd
-            // 
-            this.btnAnd.Image = global::OOD2.Properties.Resources.AND;
-            this.btnAnd.Location = new System.Drawing.Point(17, 19);
-            this.btnAnd.Name = "btnAnd";
-            this.btnAnd.Size = new System.Drawing.Size(78, 63);
-            this.btnAnd.TabIndex = 3;
-            this.btnAnd.UseVisualStyleBackColor = true;
-            this.btnAnd.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // btnNot
-            // 
-            this.btnNot.Image = global::OOD2.Properties.Resources.NOT;
-            this.btnNot.Location = new System.Drawing.Point(101, 19);
-            this.btnNot.Name = "btnNot";
-            this.btnNot.Size = new System.Drawing.Size(78, 63);
-            this.btnNot.TabIndex = 4;
-            this.btnNot.UseVisualStyleBackColor = true;
-            this.btnNot.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // btnOr
-            // 
-            this.btnOr.Image = global::OOD2.Properties.Resources.OR;
-            this.btnOr.Location = new System.Drawing.Point(17, 88);
-            this.btnOr.Name = "btnOr";
-            this.btnOr.Size = new System.Drawing.Size(78, 63);
-            this.btnOr.TabIndex = 5;
-            this.btnOr.UseVisualStyleBackColor = true;
-            this.btnOr.Click += new System.EventHandler(this.button6_Click);
-            // 
-            // btnSink
-            // 
-            this.btnSink.Image = global::OOD2.Properties.Resources.Sink;
-            this.btnSink.Location = new System.Drawing.Point(101, 88);
-            this.btnSink.Name = "btnSink";
-            this.btnSink.Size = new System.Drawing.Size(78, 63);
-            this.btnSink.TabIndex = 6;
-            this.btnSink.UseVisualStyleBackColor = true;
-            this.btnSink.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // btnSource
-            // 
-            this.btnSource.Image = global::OOD2.Properties.Resources.Source;
-            this.btnSource.Location = new System.Drawing.Point(17, 157);
-            this.btnSource.Name = "btnSource";
-            this.btnSource.Size = new System.Drawing.Size(78, 63);
-            this.btnSource.TabIndex = 7;
-            this.btnSource.UseVisualStyleBackColor = true;
-            this.btnSource.Click += new System.EventHandler(this.button8_Click);
             // 
             // groupBox2
             // 
@@ -275,6 +215,66 @@
             this.DrawArea.TabIndex = 14;
             this.DrawArea.Paint += new System.Windows.Forms.PaintEventHandler(this.DrawArea_Paint);
             this.DrawArea.MouseClick += new System.Windows.Forms.MouseEventHandler(this.DrawArea_MouseClick);
+            // 
+            // btnAnd
+            // 
+            this.btnAnd.Image = global::OOD2.Properties.Resources.AND;
+            this.btnAnd.Location = new System.Drawing.Point(17, 19);
+            this.btnAnd.Name = "btnAnd";
+            this.btnAnd.Size = new System.Drawing.Size(78, 63);
+            this.btnAnd.TabIndex = 3;
+            this.btnAnd.UseVisualStyleBackColor = true;
+            this.btnAnd.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // btnNot
+            // 
+            this.btnNot.Image = global::OOD2.Properties.Resources.NOT;
+            this.btnNot.Location = new System.Drawing.Point(101, 19);
+            this.btnNot.Name = "btnNot";
+            this.btnNot.Size = new System.Drawing.Size(78, 63);
+            this.btnNot.TabIndex = 4;
+            this.btnNot.UseVisualStyleBackColor = true;
+            this.btnNot.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // btnOr
+            // 
+            this.btnOr.Image = global::OOD2.Properties.Resources.OR;
+            this.btnOr.Location = new System.Drawing.Point(17, 88);
+            this.btnOr.Name = "btnOr";
+            this.btnOr.Size = new System.Drawing.Size(78, 63);
+            this.btnOr.TabIndex = 5;
+            this.btnOr.UseVisualStyleBackColor = true;
+            this.btnOr.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // btnConnection
+            // 
+            this.btnConnection.Image = global::OOD2.Properties.Resources.connection2;
+            this.btnConnection.Location = new System.Drawing.Point(101, 157);
+            this.btnConnection.Name = "btnConnection";
+            this.btnConnection.Size = new System.Drawing.Size(78, 63);
+            this.btnConnection.TabIndex = 8;
+            this.btnConnection.UseVisualStyleBackColor = true;
+            this.btnConnection.Click += new System.EventHandler(this.button9_Click);
+            // 
+            // btnSink
+            // 
+            this.btnSink.Image = global::OOD2.Properties.Resources.sink2;
+            this.btnSink.Location = new System.Drawing.Point(101, 88);
+            this.btnSink.Name = "btnSink";
+            this.btnSink.Size = new System.Drawing.Size(78, 63);
+            this.btnSink.TabIndex = 6;
+            this.btnSink.UseVisualStyleBackColor = true;
+            this.btnSink.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // btnSource
+            // 
+            this.btnSource.Image = global::OOD2.Properties.Resources.source2;
+            this.btnSource.Location = new System.Drawing.Point(17, 157);
+            this.btnSource.Name = "btnSource";
+            this.btnSource.Size = new System.Drawing.Size(78, 63);
+            this.btnSource.TabIndex = 7;
+            this.btnSource.UseVisualStyleBackColor = true;
+            this.btnSource.Click += new System.EventHandler(this.button8_Click);
             // 
             // Form1
             // 
