@@ -134,7 +134,13 @@ namespace OOD2
         private void saveImageToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FileHandler fh = new FileHandler();
-            bool x = fh.SavePng();
+            int offsetX = this.Size.Width - this.DisplayRectangle.Width;
+            int offsetY = this.Size.Height - this.DisplayRectangle.Height;
+
+            int gridX = DrawArea.Location.X;
+            int gridY = DrawArea.Location.Y;
+
+            bool x = fh.SavePng(this.Location.X, this.Location.Y, gridX, gridY);
             if (x == true)
             {
                 MessageBox.Show("Image saved.");
