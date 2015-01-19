@@ -15,7 +15,7 @@ namespace OOD2
         IElement secondSelectedId;
         List<IElement> elements;
         public Record undo_redo;
-        private static int lastId = 0;
+        private static int lastId = 1;
 
         public Circuit()
         {
@@ -41,7 +41,7 @@ namespace OOD2
             return lastId++;
         }
         
-        public void SearchForClick(int x,int y)
+        public bool SearchForClick(int x,int y,bool conntrue)
         {
             foreach (IElement i in elements)
             {
@@ -49,15 +49,32 @@ namespace OOD2
                 {
                     if (x > i.x - 70 && x < i.x + 70 && y > i.y - 50 && y < y + 50)
                     {
-                        if (firstSelectedId == null)
+                        if (firstSelectedId==null)
                         { firstSelectedId = i; }
-                        else if(secondSelectedId!=null)
-                        {firstSelectedId=i;}
-                        else
+                        else if(firstSelectedId!=null && secondSelectedId !=null)
+                        { firstSelectedId = i;
+                        secondSelectedId = null;
+                        }
+                        else if (firstSelectedId != null)
                         { secondSelectedId = i; }
+                        break;
                     }
                 }
+                
+                
             }
+            if (conntrue == true && secondSelectedId != null)
+            {
+                AddConnection(conntrue);
+                return true;
+            }
+            return false;
+            
+        }
+        public void ClearSelecter()
+        {
+            firstSelectedId = null;
+            secondSelectedId = null;
         }
         public void Draw(Graphics e)
         {
@@ -68,14 +85,16 @@ namespace OOD2
         }
         public void DrawLast(Graphics e)
         {
-            elements[elements.Count].Drawing(e);
+            if(elements.Count!=0)
+            elements[elements.Count-1].Drawing(e);
         }
-        public Boolean AddConnection()
+        public Boolean AddConnection(bool conntrue)
         {
-            IElement newconnection;
-            newconnection = new Connection(GetId(),firstSelectedId.id, secondSelectedId.id,firstSelectedId.x-5,firstSelectedId.y,secondSelectedId.x,secondSelectedId.y-5);
-            elements.Add(newconnection);
-            return true;
+                IElement newconnection;
+                newconnection = new Connection(GetId(), firstSelectedId.id, secondSelectedId.id, firstSelectedId.x - 5, firstSelectedId.y, secondSelectedId.x, secondSelectedId.y - 5);
+                elements.Add(newconnection);
+                return true;
+           
         }
         public Boolean AddElement(TypeOfElement newelement,int mousex,int mousey)
         {
