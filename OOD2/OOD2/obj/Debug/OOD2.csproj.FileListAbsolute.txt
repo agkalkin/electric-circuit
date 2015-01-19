@@ -27,3 +27,4 @@ C:\ood\trunk\OOD2\OOD2\obj\Debug\OOD2.Properties.Resources.resources
 C:\ood\trunk\OOD2\OOD2\obj\Debug\OOD2.csproj.GenerateResource.Cache
 C:\ood\trunk\OOD2\OOD2\bin\Debug\OOD2.exe
 C:\ood\trunk\OOD2\OOD2\bin\Debug\OOD2.pdb
+D:\Work\trunk\OOD2\OOD2\obj\Debug\OOD2.csprojResolveAssemblyReference.cache

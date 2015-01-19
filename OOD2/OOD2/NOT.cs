@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace OOD2
 {
+    [Serializable]
     class NOT : Gate
     {
         public NOT(int id, int x, int y) : base(id, x, y) 
