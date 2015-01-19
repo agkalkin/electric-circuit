@@ -8,21 +8,60 @@ namespace OOD2
 {
     class Source:Logic
     {
-        public int X { get; private set; }
-        public int Y { get; private set; }
-        public int ID { get; private set; }
+        public override int logicValue { get; protected set; }
+
         public Source(int id, int x, int y)
             : base(x, y)
         {
-            this.X = x;
-            this.Y = y;
-            this.ID = id;
+            this.x = x;
+            this.y = y;
+            this.id = id;
         }
 
         public override Boolean MoveElement(int x, int y)
         {
-            this.X = x;
-            this.Y = y;
+            this.x = x;
+            this.y = y;
+            return true;
+        }
+
+        /// <summary>
+        /// Sets logic value to the source
+        /// </summary>
+        /// <param name="value"> 1 or 0</param>
+        /// <returns>returns true if operation is successful</returns>
+        public Boolean SetValue(int value)
+        {
+            if (value == 1 || value == 0)
+            {
+                logicValue = value;
+                return true;
+            }
+            else
+                return false;
+        }
+
+        /// <summary>
+        /// Returns logic value of the source
+        /// </summary>
+        /// <returns>logic value (1 or 0)</returns>
+        public int GetValue()
+        {
+            return logicValue;
+        }
+
+        /// <summary>
+        /// Max number of inputs
+        /// </summary>
+        public override int maxInput { get; protected set; }
+
+        /// <summary>
+        /// Max number of outputs
+        /// </summary>
+        public override int maxOutput { get; protected set; }
+
+        public override bool Drawing()
+        {
             return true;
         }
     }

@@ -9,7 +9,6 @@ namespace OOD2
     abstract class Logic: IElement
     {
         //Logic value of the element (0, 1 or "unknown"
-        public int logicValue;
         public Logic(int x, int y) { }
         public virtual Boolean MoveElement(int x, int y)
         {
@@ -17,54 +16,35 @@ namespace OOD2
         }
         public virtual bool Drawing(System.Drawing.Graphics gr)
         { return true; }
-        public int id
+        public virtual bool Drawing()
         {
-            get { throw new NotImplementedException(); }
+            return true;
         }
 
-        public int input
-        {
-            get { throw new NotImplementedException(); }
-        }
+        public virtual int id { get; protected set; }
 
-        public int output
-        {
-            get { throw new NotImplementedException(); }
-        }
+        /// <summary>
+        /// Number of inputs
+        /// </summary>
+        public virtual int input { get; protected set; }
 
-        public int maxInput
-        {
-            get { throw new NotImplementedException(); }
-        }
+        /// <summary>
+        /// Number of outputs
+        /// </summary>
+        public virtual int output { get; protected set; }
 
-        public int maxOutput
-        {
-            get { throw new NotImplementedException(); }
-        }
+        public virtual int maxInput { get; protected set; }
 
-        public int oldX
-        {
-            get { throw new NotImplementedException(); }
-        }
+        public virtual int maxOutput { get; protected set; }
 
-        public int oldY
-        {
-            get { throw new NotImplementedException(); }
-        }
+        public virtual int oldX { get; protected set; }
 
-        public int x
-        {
-            get { throw new NotImplementedException(); }
-        }
+        public virtual int oldY { get; protected set; }
 
-        public int y
-        {
-            get { throw new NotImplementedException(); }
-        }
+        public virtual int x { get; protected set; }
 
-        public bool Drawing()
-        {
-            throw new NotImplementedException();
-        }
+        public virtual int y { get; protected set; }
+
+        public virtual int logicValue { get; protected set; }
     }
 }
