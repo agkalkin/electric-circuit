@@ -79,6 +79,11 @@ namespace OOD2
             this.y1 = y1;
             this.y2 = y2 + 25;
         }
-        
+        public bool CheckIfPointIsOnConnection(int x,int y)
+        {
+            if (x1 * y2 + x * x2 + y1 * y - y2 * x - x1 * y - x2 * y1 == 0)
+                return true;
+            else return false;
+        }
     }
 }

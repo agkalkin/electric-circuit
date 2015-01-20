@@ -11,11 +11,11 @@ namespace OOD2
     {
         // Color definitions for colouring connections
         Color cTrue, cFalse, cUnknown;
-        IElement firstSelectedId;
-        IElement secondSelectedId;
-        IElement searchmoveelement;
-        IElement removedelement;
-        List<IElement> elements;
+        IElement firstSelectedId; // represents the first selected Element from the GUI.
+        IElement secondSelectedId; // represents the second selected element from the GUI.
+        IElement searchmoveelement; //represents the element that is moved 
+        IElement removedelement; //represents the element that is removed 
+        List<IElement> elements; // the list of elements 
         public Record undo_redo;
         private static int lastId = 1;
         Pen color;
@@ -30,6 +30,10 @@ namespace OOD2
             
         }
 
+        /// <summary>
+        /// method for undo a recent mistake 
+        /// </summary>
+        /// <param name="lastchange"></param>
         public void Undo(TypeOfChange lastchange)
         {
             switch(lastchange)
@@ -46,6 +50,10 @@ namespace OOD2
             }
             
         }
+
+        /// <summary>
+        /// method to redo the last undo.
+        /// </summary>
         public void Redo()
         {
             elements=undo_redo.Redo();
@@ -115,6 +123,16 @@ namespace OOD2
              }
             return 0;
         }
+        public int FindConnection(int x,int y)
+        {
+            foreach(IElement i in elements)
+                if(i is Connection)
+                {
+                    if (((Connection)i).CheckIfPointIsOnConnection(x, y) == true)
+                        return i.id;
+                }
+            return 0;
+        }
         public void ClearSelecter() // it clears the first selected element and the second selected element
         {
             firstSelectedId = null;
@@ -179,9 +197,8 @@ namespace OOD2
             }
             return false;
         }
-        //Added 2 more parameters for coordinates
-        //Not sure if we'll need them
-        public Boolean MoveElement(int id, int x, int y)
+       
+        public Boolean MoveElement(int id, int x, int y)// moves the element with selected ID to the new location marked by x, y
         {
             if (id != 0)
             {    
@@ -191,7 +208,7 @@ namespace OOD2
             }
             return false;
         }
-        public void UpdateConnectionsToMovedElement()
+        public void UpdateConnectionsToMovedElement()// after the element moves we also need to update all the connections.
         {
             foreach (IElement i in elements)
             {
@@ -205,7 +222,7 @@ namespace OOD2
             }
         }
         //Added parameter
-        public Boolean RemoveConnection(int id)
+        public Boolean RemoveConnection(int id)// after a removing an element we remove all the connections associated with it.
         {
             for (int j = 0; j <= elements.Count;j++ )
             {
@@ -224,18 +241,14 @@ namespace OOD2
             
             return true;
         }
-        public Boolean RemoveElement(int id)
+        public Boolean RemoveElement(int id)// removes an element from the list
         {
             RemoveConnection(id);
             removedelement=elements.Find(x => x.id == id);
             elements.Remove(elements.Find(x=>x.id==id));
             return true;
         }
-        //Not sure if we'll need this
-        public int Calculate()
-        {
-            return -1;
-        }
+        
         public void AssignColor(Color conntrue,Color connfalse, Color connunknown) // assigns the custom colors to the default ones
         {
             cTrue = conntrue;

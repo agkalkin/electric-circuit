@@ -19,7 +19,8 @@ namespace OOD2
         bool connvalue;// Set the connection creation as true after you press the connection button
         int moveid;//remember the ID of the element which is about to be moved;
         int removeid;//rembember the ID of the element to be removed;
-        bool allowmove;
+        bool allowmove;//if the button toggle move is pressed it allows the movement of elements around the grid.
+        int removeconnection;// remebers the id of the connection pressed to be removed;
         ColorChange colorChanger;
         Color zero = Color.Red; //default color for logical value 0
         Color one = Color.Green; //default color for logical value 1
@@ -158,13 +159,14 @@ namespace OOD2
                 }
             }
         }
-        private void DrawArea_MouseDown(object sender, MouseEventArgs e)
+        private void DrawArea_MouseDown(object sender, MouseEventArgs e)// remembers the id of the selected.
         {
             moveid=thecircuit.FindElement(e.X, e.Y);
             removeid = thecircuit.FindElement(e.X, e.Y);
+            removeconnection = thecircuit.FindConnection(e.X, e.Y);
         }
 
-        private void DrawArea_MouseUp(object sender, MouseEventArgs e)
+        private void DrawArea_MouseUp(object sender, MouseEventArgs e)//moves the element with the selected id if the move is toggled on
         {
             if (allowmove==true)
             {
@@ -182,9 +184,13 @@ namespace OOD2
         
         private void button10_Click(object sender, EventArgs e)
         {
-            thecircuit.RemoveElement(removeid);
-            lastchange = TypeOfChange.REMOVE;
-            DrawArea.Refresh();
+            if (removeconnection != 0)
+            { thecircuit.RemoveElement(removeconnection); }
+            else
+            { thecircuit.RemoveElement(removeid); }
+                lastchange = TypeOfChange.REMOVE;
+                DrawArea.Refresh();
+            
         }
 
         private void DrawArea_MouseDown_1(object sender, MouseEventArgs e)
@@ -197,10 +203,10 @@ namespace OOD2
 
             if (allowmove == true)
             {
-                allowmove = false;
+                allowmove = false; button11.Text = "Toggle Move ON";
 
             }
-            else allowmove = true;
+            else { allowmove = true; button11.Text = "Toggle Move OFF"; }
 
 
         }
