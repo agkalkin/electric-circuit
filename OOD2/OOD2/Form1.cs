@@ -216,5 +216,41 @@ namespace OOD2
             thecircuit.AssignColor(zero, one, unkw);
         }
 
+        private void openFileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FileHandler fh = new FileHandler();
+            if (thecircuit.Elements.Count == 0)
+            {
+                thecircuit.Elements = fh.OpenFile();
+                DrawArea.Refresh();
+            }
+            else
+            {
+                DialogResult result = MessageBox.Show("Would you like to save your changes", "Save?", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Stop);
+                if (result == DialogResult.Yes)
+                {
+                    fh.SaveToFile(thecircuit.Elements);
+                    thecircuit.Elements = fh.OpenFile();
+                    DrawArea.Refresh();
+                }
+                else if (result == DialogResult.Cancel)
+                {
+                    
+                }
+                else
+                {
+                    
+                    thecircuit.Elements = fh.OpenFile();
+                    DrawArea.Refresh();
+                }
+            }
+        }
+
+        private void saveFileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FileHandler fh = new FileHandler();
+            fh.SaveToFile(thecircuit.Elements);
+        }
+
     }
 }
