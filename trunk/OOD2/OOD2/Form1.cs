@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace OOD2
 {
@@ -253,6 +254,19 @@ namespace OOD2
         {
             FileHandler fh = new FileHandler();
             fh.SaveToFile(thecircuit.Elements);
+        }
+
+        private void manualToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Process.Start(@"..\..\OOD2_User_Manual_Group_D.docx"); 
+            }
+            catch (Exception ex)
+            {
+                Logger.logwriter(ex.Message, ex.StackTrace);
+            }
+            
         }
 
     }

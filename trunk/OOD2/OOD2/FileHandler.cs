@@ -18,7 +18,7 @@ namespace OOD2
     {
 
         //File path including name and extension
-        string fileLocation;
+        //string fileLocation;
 
         Boolean OpenPng()
         {
