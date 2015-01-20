@@ -12,9 +12,9 @@ namespace OOD2
 {
     public partial class ColorChange : Form
     {
-        public Color zeroColor;
-        public Color oneColor;
-        public Color unkwColor;
+        public Color zeroColor; //color for logical value 0
+        public Color oneColor; //color for logical value 1
+        public Color unkwColor; //color for unknown state
 
         public ColorChange()
         {
@@ -28,10 +28,12 @@ namespace OOD2
             {
                 if (c.PropertyType.FullName == "System.Drawing.Color")
                 {
-                    zeroCb.Items.Add(c.Name);
+                    // populating the checkboxes with colors
+                    zeroCb.Items.Add(c.Name); 
                     oneCb.Items.Add(c.Name);
                     unkwCb.Items.Add(c.Name);
                 }
+                //setting default values
                 zeroCb.SelectedIndex = zeroCb.FindStringExact("Red");
                 oneCb.SelectedIndex = oneCb.FindStringExact("Green");
                 unkwCb.SelectedIndex = unkwCb.FindStringExact("Gray");
@@ -40,6 +42,7 @@ namespace OOD2
 
         private void zeroCb_DrawItem(object sender, DrawItemEventArgs e)
         {
+            //showing the colors as background in the checkboxes
             e.DrawBackground();
             e.Graphics.FillRectangle(GetCurrentBrush(zeroCb.Items[e.Index].ToString()), e.Bounds);
             Font f = zeroCb.Font;
@@ -49,6 +52,7 @@ namespace OOD2
 
         private void oneCb_DrawItem(object sender, DrawItemEventArgs e)
         {
+            //showing the colors as background in the checkboxes
             e.DrawBackground();
             e.Graphics.FillRectangle(GetCurrentBrush(oneCb.Items[e.Index].ToString()), e.Bounds);
             Font f = oneCb.Font;
@@ -58,6 +62,7 @@ namespace OOD2
 
         private void unkwCb_DrawItem(object sender, DrawItemEventArgs e)
         {
+            //showing the colors as background in the checkboxes
             e.DrawBackground();
             e.Graphics.FillRectangle(GetCurrentBrush(unkwCb.Items[e.Index].ToString()), e.Bounds);
             Font f = unkwCb.Font;
@@ -66,11 +71,12 @@ namespace OOD2
         }
         private Brush GetCurrentBrush(string colorName)
         {
-            return new SolidBrush(Color.FromName(colorName));
+            return new SolidBrush(Color.FromName(colorName)); //finding color by name
         }
 
         private void okBtn_Click(object sender, EventArgs e)
         {
+            //setting new colors.
             if ((zeroCb.SelectedItem.ToString()) == (oneCb.SelectedItem.ToString()) || (zeroCb.SelectedItem.ToString()) == (unkwCb.SelectedItem.ToString()) || (oneCb.SelectedItem.ToString()) == (unkwCb.SelectedItem.ToString()))
             {
                 MessageBox.Show("The colors must be different for all three options");

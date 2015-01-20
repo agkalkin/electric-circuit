@@ -24,8 +24,8 @@ namespace OOD2
         {
             return true;
         }
-
-        public Boolean SavePng(int formLocX, int formLocY, int offX, int offY)
+        //Saves an image of the grid with the elements as a .png file
+        public Boolean SavePng(int formLocX, int formLocY)
         {
             try
             {
@@ -37,11 +37,11 @@ namespace OOD2
                 Bitmap image = new Bitmap(width, height, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
                 Graphics g = Graphics.FromImage(image);
 
-                //g.CopyFromScreen(218, 41, 218, 41, new System.Drawing.Size(622, 472), CopyPixelOperation.SourceCopy);
-                x = x + formLocX;
-                y = y + formLocY + 24;
+                x = x + formLocX; //formLocX is the location of X of the form in the screen
+                y = y + formLocY + 24;//formLocX is the location of Y of the form in the screen, 24 is the height of the menu
+                //copying the screen from the form
                 g.CopyFromScreen(x, y, 0, 0, new System.Drawing.Size(width, height), CopyPixelOperation.SourceCopy);
-
+                //saving the screen as png
                 SaveFileDialog dlg = new SaveFileDialog();
                 dlg.DefaultExt = "png";
                 dlg.Filter = "Png Files|*.png";
@@ -53,7 +53,7 @@ namespace OOD2
             }
             catch(Exception ex)
             {
-                Logger.logwriter(ex.Message, ex.StackTrace);
+                Logger.logwriter(ex.Message, ex.StackTrace); //writing error message details to file.
                 return false;
             }
             
@@ -65,7 +65,8 @@ namespace OOD2
         /// <returns>List of elements on circuit</returns>
         public List<IElement> OpenFile()
         {
-            List<IElement> list = new List<IElement>();
+            List<IElement> list = new List<IElement>(); //list of elements to be written from file.
+            //opening the binary file and and filling up the list
             OpenFileDialog ofd = new OpenFileDialog();
             if (ofd.ShowDialog() == DialogResult.OK)
             {
@@ -81,13 +82,16 @@ namespace OOD2
                 }
                 catch (IOException)
                 {
-                    MessageBox.Show("Input/Output error");
+                    MessageBox.Show("Input error");
                 }
                 finally
                 {
-                    if (fs != null) fs.Close();
+                    if (fs != null)
+                    { 
+                        fs.Close(); 
+                    }
                 }
-                MessageBox.Show("Loading done !");
+                MessageBox.Show("Loading complete!");
             }
             return list;
         }
@@ -99,8 +103,8 @@ namespace OOD2
         /// <returns>True if successful</returns>
         public Boolean SaveToFile(List<IElement> elements)
         {
+            //Saving the elements as a binary file.
             SaveFileDialog sfd = new SaveFileDialog();
-
             sfd.Filter = "Binary files Files (*.bin*)|*.bin";
             sfd.DefaultExt = "bin";
             sfd.AddExtension = true;

@@ -21,9 +21,9 @@ namespace OOD2
         int removeid;//rembember the ID of the element to be removed;
         bool allowmove;
         ColorChange colorChanger;
-        Color zero = Color.Red;
-        Color one = Color.Green;
-        Color unkw = Color.Gray;
+        Color zero = Color.Red; //default color for logical value 0
+        Color one = Color.Green; //default color for logical value 1
+        Color unkw = Color.Gray; //default color for uknown state
 
         public Form1()
         {
@@ -126,14 +126,9 @@ namespace OOD2
         }
         private void saveImageToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //saving image from screen
             FileHandler fh = new FileHandler();
-            int offsetX = this.Size.Width - this.DisplayRectangle.Width;
-            int offsetY = this.Size.Height - this.DisplayRectangle.Height;
-
-            int gridX = DrawArea.Location.X;
-            int gridY = DrawArea.Location.Y;
-
-            bool x = fh.SavePng(this.Location.X, this.Location.Y, gridX, gridY);
+            bool x = fh.SavePng(this.Location.X, this.Location.Y);
             if (x == true)
             {
                 MessageBox.Show("Image saved.");
@@ -222,6 +217,7 @@ namespace OOD2
 
         private void openFileToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //loading from file to grid
             FileHandler fh = new FileHandler();
             if (thecircuit.Elements.Count == 0)
             {
@@ -242,8 +238,7 @@ namespace OOD2
                     
                 }
                 else
-                {
-                    
+                {                    
                     thecircuit.Elements = fh.OpenFile();
                     DrawArea.Refresh();
                 }
@@ -252,12 +247,14 @@ namespace OOD2
 
         private void saveFileToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //saving from grid to file.
             FileHandler fh = new FileHandler();
             fh.SaveToFile(thecircuit.Elements);
         }
 
         private void manualToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //opening the manual
             try
             {
                 Process.Start(@"..\..\OOD2_User_Manual_Group_D.docx"); 
