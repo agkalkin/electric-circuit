@@ -16,8 +16,9 @@ namespace OOD2
         {
             oldElements = currentlist;
             return true;
+            
         }
-        public List<IElement> Undo(TypeOfChange currentchange, List<IElement>currentlist)
+        public List<IElement> Undo(TypeOfChange currentchange, List<IElement>currentlist,int id)
         {
 
             if (currentchange == TypeOfChange.ADD)
@@ -29,7 +30,7 @@ namespace OOD2
             else if (currentchange == TypeOfChange.MOVE)
             {
                 easyredo = currentlist;
-
+                currentlist[id].MoveElement(currentlist[id].oldX, currentlist[id].oldY);
                 return currentlist;
             }
             else if (currentchange == TypeOfChange.REMOVE)

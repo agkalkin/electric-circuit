@@ -18,6 +18,7 @@ namespace OOD2
         bool connvalue;// Set the connection creation as true after you press the connection button
         int moveid;//remember the ID of the element which is about to be moved;
         int removeid;//rembember the ID of the element to be removed;
+        bool allowmove;
         ColorChange colorChanger;
         Color zero = Color.Red;
         Color one = Color.Green;
@@ -31,6 +32,7 @@ namespace OOD2
             moveid = 0;
             removeid = 0;
             connvalue = false;
+            allowmove = false;
                         
         }
        
@@ -165,10 +167,12 @@ namespace OOD2
 
         private void DrawArea_MouseUp(object sender, MouseEventArgs e)
         {
-            //if(thecircuit.MoveElement(moveid, e.X, e.Y))
-            //{DrawArea.Refresh();
-            //lastchange = TypeOfChange.MOVE;
-            //}
+            if (allowmove==true)
+            {
+                thecircuit.MoveElement(moveid, e.X, e.Y);
+                DrawArea.Refresh();
+                lastchange = TypeOfChange.MOVE;
+            }
         }
 
         private void DrawArea_MouseMove(object sender, MouseEventArgs e)
@@ -185,6 +189,19 @@ namespace OOD2
 
         private void DrawArea_MouseDown_1(object sender, MouseEventArgs e)
         {
+
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+
+            if (allowmove == true)
+            {
+                allowmove = false;
+
+            }
+            else allowmove = true;
+
 
         }
 
