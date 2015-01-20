@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 namespace OOD2
 {
 
-        [Serializable]
+    [Serializable]
     abstract class Logic: IElement
     {
        
-        //Logic value of the element (0, 1 or "unknown"
+        //Logic value of the element (0, 1 or "unknown")
         public Logic(int x, int y) { }
         
         public virtual bool Drawing(System.Drawing.Graphics gr)

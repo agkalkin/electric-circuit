@@ -10,6 +10,7 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Runtime.Serialization;
 using System.Drawing.Imaging;
+using System.Diagnostics;
 
 
 namespace OOD2
@@ -17,11 +18,11 @@ namespace OOD2
     class FileHandler
     {
 
-        //File path including name and extension
-        
+        //File path including name and extension       
 
         Boolean OpenPng()
         {
+            
             return true;
         }
         //Saves an image of the grid with the elements as a .png file
