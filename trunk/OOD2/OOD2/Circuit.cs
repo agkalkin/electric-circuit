@@ -71,8 +71,6 @@ namespace OOD2
                     }
                     
                 }
-                
-                
             }
             if (conntrue == true && secondSelectedId != null)//if there is a second selected element and the connection button was pressed adds a connection
             {
@@ -81,7 +79,6 @@ namespace OOD2
                 return true;
             }
             return false;
-            
         }
         public void ClearSelecter() // it clears the first selected element and the second selected element
         {
@@ -164,7 +161,7 @@ namespace OOD2
             elements.Remove(elements.Find(x=>x.id==id));
             return true;
         }
-        //Not sure if we'll need the last 2
+        //Not sure if we'll need this
         public int Calculate()
         {
             return -1;
@@ -178,6 +175,35 @@ namespace OOD2
         public void UpdateUndoRedo() // updates the undo redo element list.
         {
             undo_redo.Update(elements);
+        }
+
+        //Changes logic value of a source
+        public Boolean ChangeLogicValue(int id, int value)
+        {
+            bool output = false;
+            if (elements.Find(x => x.id == id) is Source)
+                output = ((Source)elements.
+                            Find(x => x.id == id)).
+                                SetValue(value);
+            return output;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="x">x coordinate</param>
+        /// <param name="y">y coordinate</param>
+        /// <param name="conntrue"></param>
+        /// <returns>selected item's id or -1 if there is no element in the area</returns>
+        public int GetSelectedId(int x, int y, bool conntrue)
+        {
+            int id = -1;
+            if (!conntrue)
+                foreach (IElement i in elements)
+                    if (!(i is Connection))
+                        if (x > i.x - 70 && x < i.x + 58 && y > i.y - 70 && y < y + 58)
+                            id = i.id;
+            return id;
         }
     }
 }

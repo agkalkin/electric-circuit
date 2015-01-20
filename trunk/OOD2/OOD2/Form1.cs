@@ -135,7 +135,22 @@ namespace OOD2
             }
         }
 
-        
+        private void DrawArea_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            int id = -1;
+            int value = -1;
+            id = thecircuit.GetSelectedId(e.X, e.Y, connvalue);
+            if (id > 0)
+            {
+                int x = Cursor.Position.X;
+                int y = Cursor.Position.Y;
+                PickValue dialog = new PickValue(x, y);
+                if (dialog.ShowDialog() == DialogResult.OK)
+                    value = dialog.Output();
+                if (thecircuit.ChangeLogicValue(id, value))
+                    DrawArea.Refresh();
+            }
+        }
 
         
 
