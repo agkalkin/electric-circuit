@@ -20,6 +20,8 @@ namespace OOD2
         int y { get; }
         int logicValue { get; }
 
+        int Output();
+        Boolean SetInput(int value);
         bool Drawing(System.Drawing.Graphics gr);
 
         Boolean MoveElement(int x, int y);

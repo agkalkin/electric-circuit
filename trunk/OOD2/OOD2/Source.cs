@@ -22,6 +22,7 @@ namespace OOD2
             this.logicValue = 0;
         }
 
+
         public override Boolean MoveElement(int x, int y)
         {
             this.x = x;
@@ -36,7 +37,7 @@ namespace OOD2
         /// <returns>returns true if operation is successful</returns>
         public Boolean SetValue(int value)
         {
-            if (value == 1 || value == 0)
+            if ((value == 1 || value == 0))
             {
                 logicValue = value;
                 return true;
@@ -45,11 +46,7 @@ namespace OOD2
                 return false;
         }
 
-        /// <summary>
-        /// Returns logic value of the source
-        /// </summary>
-        /// <returns>logic value (1 or 0)</returns>
-        public int GetValue()
+        public override int Output()
         {
             return logicValue;
         }

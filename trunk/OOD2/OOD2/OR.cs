@@ -9,6 +9,8 @@ namespace OOD2
     [Serializable]
     class OR : Gate
     {
+        private int[] InputValues;
+
         public OR(int id,int x, int y) : base(id, x, y) 
         {
             this.x = x;
@@ -16,6 +18,9 @@ namespace OOD2
             this.id = id;
             this.maxInput = 2;
             this.maxOutput = 1;
+            this.input = 0;
+            this.output = 0;
+            this.InputValues = new int[maxInput];
         }
         public override bool Drawing(System.Drawing.Graphics gr)
         {
@@ -26,14 +31,13 @@ namespace OOD2
         /// <summary>
         /// Generates output
         /// </summary>
-        /// <param name="input"> 1 or 0</param>
         /// <returns></returns>
-        public override int Output(int input1, int input2)
+        public override int Output()
         {
             int output = -1;
-            if (input1 != input2)
+            if (InputValues[0] != InputValues[1])
                 output = 1;
-            else if (input1 == 0 && input2 == 0)
+            else if (InputValues[0] == 0 && InputValues[1] == 0)
                 output = 0;
             return output;
         }
@@ -47,7 +51,17 @@ namespace OOD2
             return true;
         }
 
-        
+        public override Boolean SetInput(int value)
+        {
+            if ((value == 1 || value == 0) && (input < maxInput))
+            {
+                InputValues[input] = value;
+                input++;
+                return true;
+            }
+            else
+                return false;
+        }
 
         /// <summary>
         /// Max number of inputs

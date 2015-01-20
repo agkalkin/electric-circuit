@@ -14,23 +14,38 @@ namespace OOD2
             this.x = x;
             this.y = y;
             this.id = id;
-            this.maxInput = 2;
+            this.maxInput = 1;
             this.maxOutput = 1;
+            this.input = 0;
+            this.output = 0;
         }
+
+        private int InputValue;
 
         /// <summary>
         /// Generates output by reversing input (1 to 0 and vice versa)
         /// </summary>
         /// <param name="input"> 1 or 0</param>
         /// <returns></returns>
-        public override int Output(int input)
+        public override int Output()
         {
             int output = -1;
-            if (input == 0)
+            if (InputValue == 0)
                 output = 1;
-            else if (input == 1)
+            else if (InputValue == 1)
                 output = 0;
             return output;
+        }
+
+        public override Boolean SetInput(int value)
+        {
+            if ((value == 1 || value == 0) && (input < maxInput))
+            {
+                InputValue = value;
+                return true;
+            } 
+            else
+                return false;
         }
 
         public override Boolean MoveElement(int x, int y)

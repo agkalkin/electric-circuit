@@ -11,22 +11,24 @@ namespace OOD2
     class Connection:Logic
     {
         //IDs of elements that are connected to the front and back
-        int endID;
-        int frontID;
+        public int endID { get; private set; }
+        public int frontID { get; private set; }
         int x1;
         int x2;
         int y1;
         int y2;
-        Pen conn;
+        static Pen defaultP;
+        static Pen positiveP;
+        static Pen negativeP;
         public override bool Drawing(System.Drawing.Graphics gr)
         {
-            Pen conn = new Pen(Color.Black, 3);
-            gr.DrawLine(conn, x1, x2, y1, y2);
+            gr.DrawLine(defaultP, x1, x2, y1, y2);
             return base.Drawing();
         }
         public Connection(int id,int frontID, int endID,int x1,int x2,int y1,int y2)
             : base(frontID, endID)
         {
+            defaultP = new Pen(Color.Black, 3); //default color
             this.id = id;
             this.frontID = frontID;
             this.endID = endID;
@@ -34,12 +36,29 @@ namespace OOD2
             this.x2 = x2+30;
             this.y1 = y1;
             this.y2 = y2+25;
+
+            this.output = -1;
             
             
         }
-        public void ChangeColor(Pen pens)//changes the pen color in the draw method for the connection
+        public void ChangeColor(Color color)//changes the pen color in the draw method for the connection
         {
-            conn = pens;
+            defaultP = new Pen(color, 3);
+        }
+        /// <summary>
+        /// Sets logic value to a connection
+        /// </summary>
+        /// <param name="value">1 or 0</param>
+        /// <returns></returns>
+        public Boolean SetValue(int value)
+        {
+            if (value == 1 || value == 0)
+            {
+                output = value;
+                return true;
+            }
+            else
+                return false;
         }
         public int GetFrontID()
         {

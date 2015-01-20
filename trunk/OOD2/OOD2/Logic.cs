@@ -29,6 +29,17 @@ namespace OOD2
             return true;
 
         }
+        public virtual int Output()
+        {
+            int output = -1;
+
+            return output;
+        }
+
+        public virtual Boolean SetInput(int value)
+        {
+            return false;
+        }
 
         public virtual int id { get; protected set; }
 
