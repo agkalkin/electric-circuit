@@ -9,7 +9,7 @@ namespace OOD2
     [Serializable]
     class OR : Gate
     {
-        private int[] InputValues;
+        private KeyValuePair<int, int>[] InputValues;
 
         public OR(int id,int x, int y) : base(id, x, y) 
         {
@@ -20,7 +20,7 @@ namespace OOD2
             this.maxOutput = 1;
             this.input = 0;
             this.output = 0;
-            this.InputValues = new int[maxInput];
+            this.InputValues = new KeyValuePair<int, int>[maxInput];
         }
         public override bool Drawing(System.Drawing.Graphics gr)
         {
@@ -35,9 +35,11 @@ namespace OOD2
         public override int Output()
         {
             int output = -1;
-            if (InputValues[0] != InputValues[1])
+            if (InputValues[0].Value != InputValues[1].Value)
                 output = 1;
-            else if (InputValues[0] == 0 && InputValues[1] == 0)
+            else if (InputValues[0].Value == 1 && InputValues[1].Value == 1)
+                output = 1;
+            else if (InputValues[0].Value == 0 && InputValues[1].Value == 1)
                 output = 0;
             return output;
         }
@@ -51,12 +53,21 @@ namespace OOD2
             return true;
         }
 
-        public override Boolean SetInput(int value)
+        public override Boolean SetInput(int value, int sourceId)
         {
-            if ((value == 1 || value == 0) && (input < maxInput))
+            if ((value == 1 || value == 0))
             {
-                InputValues[input] = value;
-                input++;
+                if (input < maxInput)
+                {
+                    InputValues[input] = new KeyValuePair<int, int>(sourceId, value);
+                    input++;
+                }
+                else if (input == maxInput)
+                    for (int i = 0; i < maxInput; i++)
+                    {
+                        if (InputValues[i].Key == id)
+                            InputValues[i] = new KeyValuePair<int, int>(sourceId, value);
+                    }
                 return true;
             }
             else

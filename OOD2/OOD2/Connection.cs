@@ -22,13 +22,20 @@ namespace OOD2
         static Pen negativeP;
         public override bool Drawing(System.Drawing.Graphics gr)
         {
-            gr.DrawLine(defaultP, x1, x2, y1, y2);
+            if (this.output == 1)
+                gr.DrawLine(positiveP, x1, x2, y1, y2);
+            else if (this.output == 0)
+                gr.DrawLine(negativeP, x1, x2, y1, y2);
+            else
+                gr.DrawLine(defaultP, x1, x2, y1, y2);
             return base.Drawing();
         }
         public Connection(int id,int frontID, int endID,int x1,int x2,int y1,int y2)
             : base(frontID, endID)
         {
             defaultP = new Pen(Color.Black, 3); //default color
+            positiveP = new Pen(Color.Green, 3);
+            negativeP = new Pen(Color.Red, 3);
             this.id = id;
             this.frontID = frontID;
             this.endID = endID;
@@ -41,9 +48,11 @@ namespace OOD2
             
             
         }
-        public void ChangeColor(Color color)//changes the pen color in the draw method for the connection
+        public void ChangeColors(Color t, Color f, Color u)//changes the pen color in the draw method for the connection
         {
-            defaultP = new Pen(color, 3);
+            defaultP = new Pen(u, 3);
+            positiveP = new Pen(t,3);
+            negativeP = new Pen(f,3);
         }
         /// <summary>
         /// Sets logic value to a connection

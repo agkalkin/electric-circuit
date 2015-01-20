@@ -37,11 +37,12 @@ namespace OOD2
             return output;
         }
 
-        public override Boolean SetInput(int value)
+        public override Boolean SetInput(int value, int id)
         {
             if ((value == 1 || value == 0) && (input < maxInput))
             {
                 InputValue = value;
+                input++;
                 return true;
             } 
             else

@@ -49,7 +49,6 @@ namespace OOD2
             if (value == 1 || value == 0)
             {
                 logicValue = value;
-                input++;
                 return true;
             }
             else
