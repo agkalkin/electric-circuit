@@ -13,15 +13,21 @@ namespace OOD2
        
         //Logic value of the element (0, 1 or "unknown"
         public Logic(int x, int y) { }
-        public virtual Boolean MoveElement(int x, int y)
-        {
-            return true;
-        }
+        
         public virtual bool Drawing(System.Drawing.Graphics gr)
         { return true; }
         public virtual bool Drawing()
         {
             return true;
+        }
+        public virtual Boolean MoveElement(int x, int y)
+        {
+            oldX = this.x;
+            oldY = this.y;
+            this.x = x;
+            this.y = y;
+            return true;
+
         }
 
         public virtual int id { get; protected set; }
