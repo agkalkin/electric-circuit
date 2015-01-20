@@ -31,7 +31,7 @@ namespace OOD2
 
         public void Undo(TypeOfChange lastchange)
         {
-            elements=undo_redo.Undo(lastchange, elements);
+            elements=undo_redo.Undo(lastchange, elements,searchmoveelement.id-1);
         }
         public void Redo()
         {
