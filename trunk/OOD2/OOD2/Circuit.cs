@@ -18,7 +18,6 @@ namespace OOD2
         List<IElement> elements; // the list of elements 
         public Record undo_redo;
         private static int lastId = 1;
-        Pen color;
 
         public Circuit()
         {
@@ -157,7 +156,7 @@ namespace OOD2
                 IElement newconnection;
                 newconnection = new Connection(GetId(), firstSelectedId.id, secondSelectedId.id, firstSelectedId.x, firstSelectedId.y, secondSelectedId.x, secondSelectedId.y);
                 elements.Add(newconnection);
-                RefreshConnections(((Connection)newconnection).frontID);
+                RefreshConnections();
                 return true;
            
         }
@@ -264,11 +263,19 @@ namespace OOD2
         public Boolean ChangeLogicValue(int id, int value)
         {
             bool output = false;
-            if (elements.Find(x => x.id == id) is Source)
+            if (IsSource(id))
                 output = ((Source)elements.
                             Find(x => x.id == id)).
                                 SetValue(value);
             return output;
+        }
+
+        public bool IsSource(int id)
+        {
+            if (elements.Find(x => x.id == id) is Source)
+                return true;
+            else
+                return false;
         }
 
         /// <summary>
@@ -284,7 +291,7 @@ namespace OOD2
             if (!conntrue)
                 foreach (IElement i in elements)
                     if (!(i is Connection))
-                        if (x > i.x - 70 && x < i.x + 58 && y > i.y - 70 && y < y + 58)
+                        if (i.x < x && x < i.x + 70 && i.y + 50 > y && y > i.y)
                             id = i.id;
             return id;
      
@@ -294,19 +301,72 @@ namespace OOD2
         /// Refreshes all output connections
         /// </summary>
         /// <param name="frontID"></param>
-        public void RefreshConnections(int frontID)
+        public void rfr(int frontID)
         {
-            //this way code is usabe in case source produces several outputs
-            IElement item = elements.Find(x => x.id == frontID);
+            IElement item;
             foreach (IElement e in elements)
                 if (e is Connection)
-                    if (((Connection)e).frontID == frontID)
                     {
-                        ((Connection)e).SetValue(item.Output());
-                        elements.Find(x => x.
-                            id == ((Connection)e).endID).SetInput(item.Output());
+                        item = elements.Find(x => x.id == ((Connection)e).GetFrontID());
+                        if(((Connection)e).SetValue(item.Output()))
+                            elements.Find(x => x.
+                                 id == ((Connection)e).endID).SetInput(item.Output());
                     }
         }
+
+        public void RefreshConnections()
+        {
+            IElement item;
+            foreach (IElement e in elements)
+            {
+                if (e is Source)
+                {
+                    foreach (IElement i in elements)
+                        if (i is Connection && (((Connection)i).GetFrontID() == e.id))
+                        {
+                            //get item that's at the front of the connection
+                            item = elements.Find(x => x.id == ((Connection)i).GetFrontID());
+                            if (((Connection)i).SetValue(item.Output()))
+                                elements.Find(x => x.
+                                     id == ((Connection)i).endID).SetInput(item.Output(), ((Connection)i).GetFrontID());
+                        }
+                    foreach (IElement i in elements)
+                        if (i is Connection && !(((Connection)i).GetFrontID() == e.id))
+                        {
+                            item = elements.Find(x => x.id == ((Connection)i).GetFrontID());
+                            if (((Connection)i).SetValue(item.Output()))
+                                elements.Find(x => x.
+                                     id == ((Connection)i).endID).SetInput(item.Output(), ((Connection)i).GetFrontID());
+                        }
+                }
+            }
+
+            //foreach (IElement e in elements)
+            //{
+            //    if (!(e is Source))
+            //    {
+            //        foreach (IElement i in elements)
+            //            if (i is Connection && (((Connection)i).GetFrontID() == e.id))
+            //            {
+            //                //get item that's at the front of the connection
+            //                item = elements.Find(x => x.id == ((Connection)i).GetFrontID());
+            //                if (((Connection)i).SetValue(item.Output()))
+            //                    elements.Find(x => x.
+            //                         id == ((Connection)i).endID).SetInput(item.Output(), ((Connection)i).GetFrontID());
+            //            }
+            //        foreach (IElement i in elements)
+            //            if (i is Connection && !(((Connection)i).GetFrontID() == e.id))
+            //            {
+            //                item = elements.Find(x => x.id == ((Connection)i).GetFrontID());
+            //                if (((Connection)i).SetValue(item.Output()))
+            //                    elements.Find(x => x.
+            //                         id == ((Connection)i).endID).SetInput(item.Output(), ((Connection)i).GetFrontID());
+            //            }
+            //    }
+            //}
+        }
+
+
 
         public List<IElement> Elements
         {

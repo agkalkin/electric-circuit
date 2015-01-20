@@ -36,6 +36,10 @@ namespace OOD2
             return output;
         }
 
+        public virtual Boolean SetInput(int value, int id)
+        {
+            return false;
+        }
         public virtual Boolean SetInput(int value)
         {
             return false;

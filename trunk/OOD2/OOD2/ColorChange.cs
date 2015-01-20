@@ -87,6 +87,7 @@ namespace OOD2
                 zeroColor = Color.FromName(zeroCb.SelectedItem.ToString());
                 oneColor = Color.FromName(oneCb.SelectedItem.ToString());
                 unkwColor = Color.FromName(unkwCb.SelectedItem.ToString());
+
                 this.Close();
 
             }

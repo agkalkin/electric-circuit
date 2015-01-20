@@ -145,7 +145,7 @@ namespace OOD2
             int id = -1;
             int value = -1;
             id = thecircuit.GetSelectedId(e.X, e.Y, connvalue);
-            if (id > 0)
+            if (id > 0 && thecircuit.IsSource(id))
             {
                 int x = Cursor.Position.X;
                 int y = Cursor.Position.Y;
@@ -154,7 +154,7 @@ namespace OOD2
                     value = dialog.Output();
                 if (thecircuit.ChangeLogicValue(id, value))
                 {
-                    thecircuit.RefreshConnections(id);
+                    thecircuit.RefreshConnections();
                     DrawArea.Refresh();
                 }
             }

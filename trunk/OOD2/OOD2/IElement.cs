@@ -22,6 +22,7 @@ namespace OOD2
 
         int Output(); 
         Boolean SetInput(int value);
+        Boolean SetInput(int value, int id);
         bool Drawing(System.Drawing.Graphics gr);
 
         Boolean MoveElement(int x, int y);
