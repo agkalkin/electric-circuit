@@ -8,8 +8,7 @@ namespace OOD2
 {
     class Record
     {
-        List<TypeOfChange> changes;
-        List<IElement> oldElements;
+        List<IElement> oldElements = new List<IElement>();
         List<IElement> easyredo;//always saves the last list after changes by undo have been made
 
         public Boolean Update(List<IElement> currentlist)
@@ -18,27 +17,25 @@ namespace OOD2
             return true;
             
         }
-        public List<IElement> Undo(TypeOfChange currentchange, List<IElement>currentlist,int id)
+        public List<IElement> UndoAdd(List<IElement>currentlist)
         {
 
-            if (currentchange == TypeOfChange.ADD)
-            {
                 easyredo = currentlist;
                 currentlist.RemoveAt(currentlist.Count-1);
                 return currentlist;
-            }
-            else if (currentchange == TypeOfChange.MOVE)
-            {
-                easyredo = currentlist;
-                currentlist[id].MoveElement(currentlist[id].oldX, currentlist[id].oldY);
-                return currentlist;
-            }
-            else if (currentchange == TypeOfChange.REMOVE)
-            {
-                easyredo = currentlist;
+            
+        }
+        public List<IElement>UndoMove(List<IElement>currentlist,int id)
+        {
+            easyredo = currentlist;
+            currentlist[id].MoveElement(currentlist[id].oldX, currentlist[id].oldY);
+            return currentlist;
+
+        }
+        public List<IElement>UndoRemove(List<IElement>currentlist)
+        {
+            easyredo = currentlist;
                 return oldElements;
-            }
-            return null;
         }
         public List<IElement> Redo()
         {
