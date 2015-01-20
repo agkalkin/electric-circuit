@@ -7,6 +7,8 @@ using System.IO;
 
 namespace OOD2
 {
+    //THIS METHOD IS A TEST METHOD. IT ONLY EXISTS FOR TESTING AND ERROR GATHERING PURPOSES.
+    //IT IS NOT PART OF THE APPLICATION DESIGN.
     class Logger
     {
         
