@@ -155,7 +155,6 @@ namespace OOD2
         private void DrawArea_MouseDown(object sender, MouseEventArgs e)
         {
             moveid=thecircuit.FindElement(e.X, e.Y);
-            
             removeid = thecircuit.FindElement(e.X, e.Y);
         }
 
