@@ -14,6 +14,7 @@ namespace OOD2
         IElement firstSelectedId;
         IElement secondSelectedId;
         IElement searchmoveelement;
+        IElement removedelement;
         List<IElement> elements;
         public Record undo_redo;
         private static int lastId = 1;
@@ -40,7 +41,7 @@ namespace OOD2
                     undo_redo.UndoMove(elements,searchmoveelement.id-1);
                     break;
                 case TypeOfChange.REMOVE:
-                    elements=undo_redo.UndoRemove(elements);
+                    elements=undo_redo.UndoRemove(removedelement);
                     break;
             }
             
@@ -226,6 +227,7 @@ namespace OOD2
         public Boolean RemoveElement(int id)
         {
             RemoveConnection(id);
+            removedelement=elements.Find(x => x.id == id);
             elements.Remove(elements.Find(x=>x.id==id));
             return true;
         }

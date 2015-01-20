@@ -32,10 +32,15 @@ namespace OOD2
             return currentlist;
 
         }
-        public List<IElement>UndoRemove(List<IElement>currentlist)
+        public List<IElement>UndoRemove(IElement removedelement)
         {
-            easyredo = currentlist;
-                return oldElements;
+            if (removedelement != null)
+            {
+                easyredo = oldElements;
+                oldElements.Add(removedelement);
+                
+            }
+            return oldElements;
         }
         public List<IElement> Redo()
         {
