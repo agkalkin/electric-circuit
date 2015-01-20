@@ -32,6 +32,9 @@ namespace OOD2
                     oneCb.Items.Add(c.Name);
                     unkwCb.Items.Add(c.Name);
                 }
+                zeroCb.SelectedIndex = zeroCb.FindStringExact("Red");
+                oneCb.SelectedIndex = oneCb.FindStringExact("Green");
+                unkwCb.SelectedIndex = unkwCb.FindStringExact("Gray");
             }
         }
 
