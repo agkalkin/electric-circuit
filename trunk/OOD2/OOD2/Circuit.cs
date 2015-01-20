@@ -266,5 +266,11 @@ namespace OOD2
             return id;
      
         }
+
+        public List<IElement> Elements
+        {
+            get { return elements; }
+            set { elements = value; }
+        }
     }
 }

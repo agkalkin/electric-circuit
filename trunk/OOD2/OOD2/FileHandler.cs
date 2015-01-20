@@ -63,7 +63,7 @@ namespace OOD2
         /// Opens editable file
         /// </summary>
         /// <returns>List of elements on circuit</returns>
-        List<IElement> OpenFile()
+        public List<IElement> OpenFile()
         {
             List<IElement> list = new List<IElement>();
             OpenFileDialog ofd = new OpenFileDialog();
@@ -97,7 +97,7 @@ namespace OOD2
         /// </summary>
         /// <param name="elements">List of elements on circuit</param>
         /// <returns>True if successful</returns>
-        Boolean SaveToFile(List<IElement> elements)
+        public Boolean SaveToFile(List<IElement> elements)
         {
             SaveFileDialog sfd = new SaveFileDialog();
 
