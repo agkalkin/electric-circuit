@@ -8,17 +8,16 @@ namespace OOD2
 {
     class Record
     {
-        List<IElement> oldElements = new List<IElement>(); // list of saved elements before the change
+        List<IElement> oldElements = new List<IElement>();//the list of elements before the undo method
         List<IElement> easyredo;//always saves the last list after changes by undo have been made
-        //method to update the 
-        public Boolean Update(List<IElement> currentlist)
+
+        public Boolean Update(List<IElement> currentlist)//updates the list
         {
             oldElements = currentlist;
             return true;
             
         }
-        //method for undoing and add element action
-        public List<IElement> UndoAdd(List<IElement>currentlist)
+        public List<IElement> UndoAdd(List<IElement>currentlist)// removes the last added element, and saves the list before.
         {
 
                 easyredo = currentlist;
@@ -26,15 +25,14 @@ namespace OOD2
                 return currentlist;
             
         }
-        //method for undoing an move action
-        public List<IElement>UndoMove(List<IElement>currentlist,int id)
+        public List<IElement>UndoMove(List<IElement>currentlist,int id)// saves the old values and then moves it back to his old position
         {
             easyredo = currentlist;
             currentlist[id].MoveElement(currentlist[id].oldX, currentlist[id].oldY);
             return currentlist;
+
         }
-        //method for undoing a remove action
-        public List<IElement>UndoRemove(IElement removedelement)
+        public List<IElement>UndoRemove(IElement removedelement)// Remvoves an element and remembers it in the old list for the redo
         {
             if (removedelement != null)
             {
