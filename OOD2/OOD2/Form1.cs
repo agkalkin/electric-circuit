@@ -18,6 +18,11 @@ namespace OOD2
         bool connvalue;// Set the connection creation as true after you press the connection button
         int moveid;//remember the ID of the element which is about to be moved;
         int removeid;//rembember the ID of the element to be removed;
+        ColorChange colorChanger;
+        Color zero = Color.Red;
+        Color one = Color.Green;
+        Color unkw = Color.Gray;
+
         public Form1()
         {
             InitializeComponent();
@@ -181,6 +186,16 @@ namespace OOD2
         private void DrawArea_MouseDown_1(object sender, MouseEventArgs e)
         {
 
+        }
+
+        private void preferencesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            colorChanger = new ColorChange();
+            colorChanger.ShowDialog();
+            zero = colorChanger.zeroColor;
+            one = colorChanger.oneColor;
+            unkw = colorChanger.unkwColor;
+            thecircuit.AssignColor(zero, one, unkw);
         }
 
     }

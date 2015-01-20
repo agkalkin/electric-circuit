@@ -46,6 +46,12 @@
   <ItemGroup>
     <Compile Include="AND.cs" />
     <Compile Include="Circuit.cs" />
+    <Compile Include="ColorChange.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ColorChange.designer.cs">
+      <DependentUpon>ColorChange.cs</DependentUpon>
+    </Compile>
     <Compile Include="Connection.cs" />
     <Compile Include="FileHandler.cs" />
     <Compile Include="Form1.cs">
@@ -73,6 +79,9 @@
     <Compile Include="Source.cs" />
     <Compile Include="TypeOfChange.cs" />
     <Compile Include="TypeOfElement.cs" />
+    <EmbeddedResource Include="ColorChange.resx">
+      <DependentUpon>ColorChange.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
