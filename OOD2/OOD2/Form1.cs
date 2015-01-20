@@ -11,19 +11,20 @@ using System.Windows.Forms;
 namespace OOD2
 {
     public partial class Form1 : Form
-    {
-        int x, y;
+    {  
         TypeOfElement NewElement;
         Circuit thecircuit;
         TypeOfChange lastchange;//saves the last action type the user done.
         bool connvalue;// Set the connection creation as true after you press the connection button
+        int moveid;//remember the ID of the element which is about to be moved;
+        int removeid;//rembember the ID of the element to be removed;
         public Form1()
         {
             InitializeComponent();
             thecircuit = new Circuit();
             NewElement = TypeOfElement.NONE;
-            x = 0;
-            y = 0;
+            moveid = 0;
+            removeid = 0;
             connvalue = false;
                         
         }
@@ -76,7 +77,7 @@ namespace OOD2
 
         {
             NewElement = TypeOfElement.SINK;
-
+            
             connvalue = false;
         }
 
@@ -151,8 +152,37 @@ namespace OOD2
                     DrawArea.Refresh();
             }
         }
+        private void DrawArea_MouseDown(object sender, MouseEventArgs e)
+        {
+            moveid=thecircuit.FindElement(e.X, e.Y);
+            
+            removeid = thecircuit.FindElement(e.X, e.Y);
+        }
+
+        private void DrawArea_MouseUp(object sender, MouseEventArgs e)
+        {
+            //if(thecircuit.MoveElement(moveid, e.X, e.Y))
+            //{DrawArea.Refresh();
+            //lastchange = TypeOfChange.MOVE;
+            //}
+        }
+
+        private void DrawArea_MouseMove(object sender, MouseEventArgs e)
+        {
+
+        }
 
         
+        private void button10_Click(object sender, EventArgs e)
+        {
+            thecircuit.RemoveElement(removeid);
+            DrawArea.Refresh();
+        }
+
+        private void DrawArea_MouseDown_1(object sender, MouseEventArgs e)
+        {
+
+        }
 
     }
 }

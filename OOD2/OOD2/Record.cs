@@ -10,7 +10,7 @@ namespace OOD2
     {
         List<TypeOfChange> changes;
         List<IElement> oldElements;
-        List<IElement> easyredo;
+        List<IElement> easyredo;//always saves the last list after changes by undo have been made
 
         public Boolean Update(List<IElement> currentlist)
         {
@@ -29,7 +29,7 @@ namespace OOD2
             else if (currentchange == TypeOfChange.MOVE)
             {
                 easyredo = currentlist;
-                currentlist[currentlist.Count-1].MoveElement(currentlist[currentlist.Count-1].oldX, currentlist[currentlist.Count-1].oldY);
+                
                 return currentlist;
             }
             else if (currentchange == TypeOfChange.REMOVE)

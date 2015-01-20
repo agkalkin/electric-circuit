@@ -38,7 +38,14 @@ namespace OOD2
             return output;
         }
 
-        public abstract Boolean MoveElement(int x, int y);
+        public virtual Boolean MoveElement(int x, int y)
+        {
+            oldX = this.x;
+            oldY = this.y;
+            this.x = x;
+            this.y = y;
+            return true;
+        }
 
 
         public virtual int id { get; protected set; }

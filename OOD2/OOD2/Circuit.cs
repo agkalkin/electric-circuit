@@ -13,6 +13,7 @@ namespace OOD2
         Color cTrue, cFalse, cUnknown;
         IElement firstSelectedId;
         IElement secondSelectedId;
+        IElement searchmoveelement;
         List<IElement> elements;
         public Record undo_redo;
         private static int lastId = 1;
@@ -25,6 +26,7 @@ namespace OOD2
             cTrue = Color.Green;
             cFalse = Color.Red;
             cUnknown = Color.Black;
+            
         }
 
         public void Undo(TypeOfChange lastchange)
@@ -79,6 +81,19 @@ namespace OOD2
                 return true;
             }
             return false;
+        }
+        public int FindElement(int x,int y)// Finds the element located at position x,y
+        {
+            foreach (IElement i in elements)
+            {
+                if (!(i is Connection))
+                {
+                    if (i.x < x && x < i.x + 70 && i.y + 50 > y && y > i.y)
+                        return i.id;
+                }
+
+             }
+            return 0;
         }
         public void ClearSelecter() // it clears the first selected element and the second selected element
         {
@@ -145,20 +160,40 @@ namespace OOD2
         //Not sure if we'll need them
         public Boolean MoveElement(int id, int x, int y)
         {
-            IElement searchelement;
-            searchelement=elements.Find(search=> search.id==id);
-            searchelement.MoveElement(x, y);
-            return true;
+            if (id != 0)
+            {    
+                searchmoveelement = elements.Find(search => search.id == id);
+                searchmoveelement.MoveElement(x, y);    
+            }
+            return false;
+        }
+        public void UpdateConnectionsToMovedElement()
+        {
+            //foreach (Connection i in elements)
+            //{
+            //    if (i.GetFrontID() == searchmoveelement.id)
+            //        i.UpdateFrontHead(searchmoveelement.x, searchmoveelement.y);
+            //    else if (i.GetEndID() == searchmoveelement.id)
+            //        i.UpdateEndHead(searchmoveelement.x, searchmoveelement.y);
+            //}
         }
         //Added parameter
         public Boolean RemoveConnection(int id)
-        {
-            elements.Remove(elements.Find(x => x.id == id));
+        {  
+           foreach (IElement i in elements)
+            {
+                if (i is Connection)
+                {
+                    if (((Connection)i).GetEndID() == id || ((Connection)i).GetFrontID() == id)
+                        elements.Remove(i);
+                }
+            }
             return true;
         }
         public Boolean RemoveElement(int id)
         {
             elements.Remove(elements.Find(x=>x.id==id));
+            RemoveConnection(id);
             return true;
         }
         //Not sure if we'll need this
@@ -204,6 +239,7 @@ namespace OOD2
                         if (x > i.x - 70 && x < i.x + 58 && y > i.y - 70 && y < y + 58)
                             id = i.id;
             return id;
+     
         }
     }
 }

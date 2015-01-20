@@ -8,3 +8,13 @@ D:\Work\trunk\OOD2\OOD2\obj\Debug\OOD2.csproj.GenerateResource.Cache
 D:\Work\trunk\OOD2\OOD2\obj\Debug\OOD2.exe
 D:\Work\trunk\OOD2\OOD2\obj\Debug\OOD2.pdb
 D:\Work\trunk\OOD2\OOD2\obj\Debug\OOD2.csprojResolveAssemblyReference.cache
+C:\ood\trunk\OOD2\OOD2\bin\Debug\OOD2.exe.config
+C:\ood\trunk\OOD2\OOD2\obj\Debug\OOD2.exe
+C:\ood\trunk\OOD2\OOD2\obj\Debug\OOD2.pdb
+C:\ood\trunk\OOD2\OOD2\bin\Debug\OOD2.exe
+C:\ood\trunk\OOD2\OOD2\bin\Debug\OOD2.pdb
+C:\ood\trunk\OOD2\OOD2\obj\Debug\OOD2.csprojResolveAssemblyReference.cache
+C:\ood\trunk\OOD2\OOD2\obj\Debug\OOD2.Form1.resources
+C:\ood\trunk\OOD2\OOD2\obj\Debug\OOD2.PickValue.resources
+C:\ood\trunk\OOD2\OOD2\obj\Debug\OOD2.Properties.Resources.resources
+C:\ood\trunk\OOD2\OOD2\obj\Debug\OOD2.csproj.GenerateResource.Cache

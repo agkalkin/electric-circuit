@@ -41,6 +41,25 @@ namespace OOD2
         {
             conn = pens;
         }
+        public int GetFrontID()
+        {
+            return frontID;
+        }
+        public int GetEndID()
+        {
+            return endID;
+        }
+        public void UpdateFrontHead(int x1,int x2)
+        {
+            this.x1 = x1 + 70;
+            this.x2 = x2 + 30;
+           
+        }
+        public void UpdateEndHead(int y1,int y2)
+        {
+            this.y1 = y1;
+            this.y2 = y2 + 25;
+        }
         
     }
 }
