@@ -14,14 +14,15 @@ namespace OOD2
         public Sink(int id, int x, int y)
             : base(x, y)
         {
-            this.x = x;
-            this.y = y;
-            this.id = id;
-            this.maxInput = 1;
-            this.maxOutput = 0;
-            this.input = 0;
-            this.output = 0;
+            this.x = x; //x coordinate on the grid
+            this.y = y; //y coordinate on the grid
+            this.id = id; // id of the current gate on the grid
+            this.maxInput = 1; //maximum number of inputs
+            this.maxOutput = 0; //max number of outputs
+            this.input = 0; //
+            this.output = 0;//
         }
+        //method to draw the sink element
         public override bool Drawing(System.Drawing.Graphics gr)
         {
             if (logicValue == 0)
@@ -30,6 +31,7 @@ namespace OOD2
                 gr.DrawImage(OOD2.Properties.Resources.sink_positive, x, y);
             return true;
         }
+        //method to move the sink element
         public override Boolean MoveElement(int x, int y)
         {
             this.x = x;

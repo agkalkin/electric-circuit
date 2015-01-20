@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace OOD2
 {
+    //types of elements
     enum TypeOfElement
     {
         CONNECTION,
