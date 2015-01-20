@@ -68,14 +68,21 @@ namespace OOD2
                     if (i.x<x && x<i.x+70 && i.y+50>y && y>i.y)
                     {
                         if (firstSelectedId==null)
-                        { firstSelectedId = i; break; }
+                        { 
+                            firstSelectedId = i; 
+                            break; 
+                        }
                         else if(firstSelectedId!=null && secondSelectedId !=null)
-                        { firstSelectedId = i;
-                        secondSelectedId = null;
-                        break;
+                        { 
+                            firstSelectedId = i;
+                            secondSelectedId = null;
+                            break;
                         }
                         else if (firstSelectedId != null)
-                        { secondSelectedId = i; break; }
+                        { 
+                            secondSelectedId = i; 
+                            break; 
+                        }
                         else if(firstSelectedId==secondSelectedId)
                         {
                             ClearSelecter();
@@ -131,6 +138,7 @@ namespace OOD2
                 IElement newconnection;
                 newconnection = new Connection(GetId(), firstSelectedId.id, secondSelectedId.id, firstSelectedId.x, firstSelectedId.y, secondSelectedId.x, secondSelectedId.y);
                 elements.Add(newconnection);
+                RefreshConnections(((Connection)newconnection).frontID);
                 return true;
            
         }
@@ -265,6 +273,24 @@ namespace OOD2
                             id = i.id;
             return id;
      
+        }
+
+        /// <summary>
+        /// Refreshes all output connections
+        /// </summary>
+        /// <param name="frontID"></param>
+        public void RefreshConnections(int frontID)
+        {
+            //this way code is usabe in case source produces several outputs
+            IElement item = elements.Find(x => x.id == frontID);
+            foreach (IElement e in elements)
+                if (e is Connection)
+                    if (((Connection)e).frontID == frontID)
+                    {
+                        ((Connection)e).SetValue(item.Output());
+                        elements.Find(x => x.
+                            id == ((Connection)e).endID).SetInput(item.Output());
+                    }
         }
 
         public List<IElement> Elements

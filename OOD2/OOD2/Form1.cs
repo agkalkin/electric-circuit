@@ -156,7 +156,10 @@ namespace OOD2
                 if (dialog.ShowDialog() == DialogResult.OK)
                     value = dialog.Output();
                 if (thecircuit.ChangeLogicValue(id, value))
+                {
+                    thecircuit.RefreshConnections(id);
                     DrawArea.Refresh();
+                }
             }
         }
         private void DrawArea_MouseDown(object sender, MouseEventArgs e)

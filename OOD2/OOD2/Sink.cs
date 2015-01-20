@@ -17,10 +17,17 @@ namespace OOD2
             this.x = x;
             this.y = y;
             this.id = id;
+            this.maxInput = 1;
+            this.maxOutput = 0;
+            this.input = 0;
+            this.output = 0;
         }
         public override bool Drawing(System.Drawing.Graphics gr)
         {
-            gr.DrawImage(OOD2.Properties.Resources.sink2, x, y);
+            if (logicValue == 0)
+                gr.DrawImage(OOD2.Properties.Resources.sink2, x, y);
+            else if(logicValue == 1)
+                gr.DrawImage(OOD2.Properties.Resources.sink_positive, x, y);
             return true;
         }
         public override Boolean MoveElement(int x, int y)
@@ -35,11 +42,12 @@ namespace OOD2
         /// </summary>
         /// <param name="value"> 1 or 0</param>
         /// <returns>returns true if operation is successful</returns>
-        public Boolean SetValue(int value)
+        public override Boolean SetInput(int value)
         {
             if (value == 1 || value == 0)
             {
                 logicValue = value;
+                input++;
                 return true;
             }
             else

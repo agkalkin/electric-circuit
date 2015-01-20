@@ -15,27 +15,22 @@ namespace OOD2
         /// <summary>
         /// Takes two inputs and generates output
         /// </summary>
-        /// <param name="input1">First input</param>
-        /// <param name="input2">Second input</param>
         /// <returns> 0 or 1 (TRUE or FALSE)</returns>
-        public virtual int Output(int input1, int input2)
+        public virtual int Output()
         {
             int output = -1;
 
             return output;
         }
-        public virtual bool Drawing(System.Drawing.Graphics gr)
-        { return true; }
-        /// <summary>
-        /// Takes input and generates output
-        /// </summary>
-        /// <param name="input">Gate input</param>
-        /// <returns>0 or 1 (TRUE or FALSE)</returns>
-        public virtual int Output(int input)
-        {
-            int output = -1;
 
-            return output;
+        public virtual Boolean SetInput(int value)
+        {
+                return false;
+        }
+
+        public virtual bool Drawing(System.Drawing.Graphics gr)
+        { 
+            return true; 
         }
 
         public virtual Boolean MoveElement(int x, int y)
