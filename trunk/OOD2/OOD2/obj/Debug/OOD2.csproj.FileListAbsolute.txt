@@ -18,3 +18,14 @@ C:\ood\trunk\OOD2\OOD2\obj\Debug\OOD2.Form1.resources
 C:\ood\trunk\OOD2\OOD2\obj\Debug\OOD2.PickValue.resources
 C:\ood\trunk\OOD2\OOD2\obj\Debug\OOD2.Properties.Resources.resources
 C:\ood\trunk\OOD2\OOD2\obj\Debug\OOD2.csproj.GenerateResource.Cache
+C:\Users\Developer\Documents\New folder (3)\trunk\OOD2\OOD2\bin\Debug\OOD2.exe.config
+C:\Users\Developer\Documents\New folder (3)\trunk\OOD2\OOD2\obj\Debug\OOD2.exe
+C:\Users\Developer\Documents\New folder (3)\trunk\OOD2\OOD2\obj\Debug\OOD2.pdb
+C:\Users\Developer\Documents\New folder (3)\trunk\OOD2\OOD2\bin\Debug\OOD2.exe
+C:\Users\Developer\Documents\New folder (3)\trunk\OOD2\OOD2\bin\Debug\OOD2.pdb
+C:\Users\Developer\Documents\New folder (3)\trunk\OOD2\OOD2\obj\Debug\OOD2.csprojResolveAssemblyReference.cache
+C:\Users\Developer\Documents\New folder (3)\trunk\OOD2\OOD2\obj\Debug\OOD2.ColorChange.resources
+C:\Users\Developer\Documents\New folder (3)\trunk\OOD2\OOD2\obj\Debug\OOD2.Form1.resources
+C:\Users\Developer\Documents\New folder (3)\trunk\OOD2\OOD2\obj\Debug\OOD2.PickValue.resources
+C:\Users\Developer\Documents\New folder (3)\trunk\OOD2\OOD2\obj\Debug\OOD2.Properties.Resources.resources
+C:\Users\Developer\Documents\New folder (3)\trunk\OOD2\OOD2\obj\Debug\OOD2.csproj.GenerateResource.Cache
