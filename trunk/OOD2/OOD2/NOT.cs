@@ -11,13 +11,13 @@ namespace OOD2
     {
         public NOT(int id, int x, int y) : base(id, x, y) 
         {
-            this.x = x;
+            this.x = x; //current coordinates
             this.y = y;
-            this.id = id;
-            this.maxInput = 1;
-            this.maxOutput = 1;
-            this.input = 0;
-            this.output = 0;
+            this.id = id; // id for the element on the grid
+            this.maxInput = 1; // max no of inputs
+            this.maxOutput = 1; //max no of outputs
+            this.input = 0; //current input
+            this.output = 0; //current output
         }
 
         private int InputValue;

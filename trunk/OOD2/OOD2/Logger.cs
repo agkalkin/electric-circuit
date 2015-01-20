@@ -9,6 +9,7 @@ namespace OOD2
 {
     //THIS METHOD IS A TEST METHOD. IT ONLY EXISTS FOR TESTING AND ERROR GATHERING PURPOSES.
     //IT IS NOT PART OF THE APPLICATION DESIGN.
+    //The whole class creates a folder and logs the errors from the application to a file.
     class Logger
     {
         
