@@ -184,6 +184,7 @@ namespace OOD2
         private void button10_Click(object sender, EventArgs e)
         {
             thecircuit.RemoveElement(removeid);
+            lastchange = TypeOfChange.REMOVE;
             DrawArea.Refresh();
         }
 

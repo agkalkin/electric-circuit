@@ -31,7 +31,19 @@ namespace OOD2
 
         public void Undo(TypeOfChange lastchange)
         {
-            elements=undo_redo.Undo(lastchange, elements,searchmoveelement.id-1);
+            switch(lastchange)
+            {
+                case TypeOfChange.ADD:
+                   undo_redo.UndoAdd(elements);
+                    break;
+                case TypeOfChange.MOVE:
+                    undo_redo.UndoMove(elements,searchmoveelement.id-1);
+                    break;
+                case TypeOfChange.REMOVE:
+                    elements=undo_redo.UndoRemove(elements);
+                    break;
+            }
+            
         }
         public void Redo()
         {
@@ -128,30 +140,32 @@ namespace OOD2
             {
                 Source newsource = new Source(GetId(), mousex, mousey);
                 elements.Add(newsource);
+
                 return true;
             }
             else if (newelement == TypeOfElement.ANDGATE)
             {
                 AND newand = new AND(GetId(), mousex, mousey);
-                elements.Add(newand);
+                elements.Add(newand); 
+             
                 return true;
             }
             else if(newelement==TypeOfElement.NOTGATE)
             {
                 NOT newnot = new NOT(GetId(), mousex, mousey);
-                elements.Add(newnot);
+                elements.Add(newnot); 
                 return true;
             }
             else if(newelement==TypeOfElement.ORGATE)
             {
                 OR newor = new OR(GetId(), mousex, mousey);
-                elements.Add(newor);
+                elements.Add(newor); 
                 return true; 
             }
             else if(newelement==TypeOfElement.SINK)
             {
                 Sink newsink = new Sink(GetId(), mousex, mousey);
-                elements.Add(newsink);
+                elements.Add(newsink); 
                 return true; 
             }
             return false;
