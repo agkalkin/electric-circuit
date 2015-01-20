@@ -19,3 +19,14 @@ C:\Users\Developer\Documents\New folder (7)\trunk\OOD2\OOD2\obj\Debug\OOD2.Form1
 C:\Users\Developer\Documents\New folder (7)\trunk\OOD2\OOD2\obj\Debug\OOD2.PickValue.resources
 C:\Users\Developer\Documents\New folder (7)\trunk\OOD2\OOD2\obj\Debug\OOD2.Properties.Resources.resources
 C:\Users\Developer\Documents\New folder (7)\trunk\OOD2\OOD2\obj\Debug\OOD2.csproj.GenerateResource.Cache
+D:\Fontys\Block 6\OOD2\New folder (2)\trunk\OOD2\OOD2\bin\Debug\OOD2.exe.config
+D:\Fontys\Block 6\OOD2\New folder (2)\trunk\OOD2\OOD2\obj\Debug\OOD2.exe
+D:\Fontys\Block 6\OOD2\New folder (2)\trunk\OOD2\OOD2\obj\Debug\OOD2.pdb
+D:\Fontys\Block 6\OOD2\New folder (2)\trunk\OOD2\OOD2\bin\Debug\OOD2.exe
+D:\Fontys\Block 6\OOD2\New folder (2)\trunk\OOD2\OOD2\bin\Debug\OOD2.pdb
+D:\Fontys\Block 6\OOD2\New folder (2)\trunk\OOD2\OOD2\obj\Debug\OOD2.csprojResolveAssemblyReference.cache
+D:\Fontys\Block 6\OOD2\New folder (2)\trunk\OOD2\OOD2\obj\Debug\OOD2.ColorChange.resources
+D:\Fontys\Block 6\OOD2\New folder (2)\trunk\OOD2\OOD2\obj\Debug\OOD2.Form1.resources
+D:\Fontys\Block 6\OOD2\New folder (2)\trunk\OOD2\OOD2\obj\Debug\OOD2.PickValue.resources
+D:\Fontys\Block 6\OOD2\New folder (2)\trunk\OOD2\OOD2\obj\Debug\OOD2.Properties.Resources.resources
+D:\Fontys\Block 6\OOD2\New folder (2)\trunk\OOD2\OOD2\obj\Debug\OOD2.csproj.GenerateResource.Cache
