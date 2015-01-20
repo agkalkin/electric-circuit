@@ -163,19 +163,23 @@ namespace OOD2
             if (id != 0)
             {    
                 searchmoveelement = elements.Find(search => search.id == id);
-                searchmoveelement.MoveElement(x, y);    
+                searchmoveelement.MoveElement(x, y);
+                UpdateConnectionsToMovedElement();
             }
             return false;
         }
         public void UpdateConnectionsToMovedElement()
         {
-            //foreach (Connection i in elements)
-            //{
-            //    if (i.GetFrontID() == searchmoveelement.id)
-            //        i.UpdateFrontHead(searchmoveelement.x, searchmoveelement.y);
-            //    else if (i.GetEndID() == searchmoveelement.id)
-            //        i.UpdateEndHead(searchmoveelement.x, searchmoveelement.y);
-            //}
+            foreach (IElement i in elements)
+            {
+                if (i is Connection)
+                {
+                    if (((Connection)i).GetFrontID() == searchmoveelement.id)
+                        ((Connection)i).UpdateFrontHead(searchmoveelement.x, searchmoveelement.y);
+                    else if (((Connection)i).GetEndID() == searchmoveelement.id)
+                        ((Connection)i).UpdateEndHead(searchmoveelement.x, searchmoveelement.y);
+                }
+            }
         }
         //Added parameter
         public Boolean RemoveConnection(int id)

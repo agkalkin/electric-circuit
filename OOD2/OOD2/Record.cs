@@ -29,7 +29,7 @@ namespace OOD2
             else if (currentchange == TypeOfChange.MOVE)
             {
                 easyredo = currentlist;
-                
+
                 return currentlist;
             }
             else if (currentchange == TypeOfChange.REMOVE)

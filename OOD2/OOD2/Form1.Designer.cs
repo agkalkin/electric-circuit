@@ -95,7 +95,7 @@
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(78, 63);
             this.button10.TabIndex = 9;
-            this.button10.Text = "button10";
+            this.button10.Text = "Delete";
             this.button10.UseVisualStyleBackColor = true;
             this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
@@ -103,10 +103,11 @@
             // 
             this.button11.Location = new System.Drawing.Point(101, 226);
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(78, 63);
+            this.button11.Size = new System.Drawing.Size(76, 62);
             this.button11.TabIndex = 10;
-            this.button11.Text = "button11";
+            this.button11.Text = "Toggle Move On/Off";
             this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // groupBox1
             // 

@@ -29,3 +29,4 @@ C:\Users\Developer\Documents\New folder (3)\trunk\OOD2\OOD2\obj\Debug\OOD2.Form1
 C:\Users\Developer\Documents\New folder (3)\trunk\OOD2\OOD2\obj\Debug\OOD2.PickValue.resources
 C:\Users\Developer\Documents\New folder (3)\trunk\OOD2\OOD2\obj\Debug\OOD2.Properties.Resources.resources
 C:\Users\Developer\Documents\New folder (3)\trunk\OOD2\OOD2\obj\Debug\OOD2.csproj.GenerateResource.Cache
+C:\ood\trunk\OOD2\OOD2\obj\Debug\OOD2.ColorChange.resources
