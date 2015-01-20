@@ -179,21 +179,28 @@ namespace OOD2
         }
         //Added parameter
         public Boolean RemoveConnection(int id)
-        {  
-           foreach (IElement i in elements)
+        {
+            for (int j = 0; j <= elements.Count;j++ )
             {
-                if (i is Connection)
+                foreach (IElement i in elements)
                 {
-                    if (((Connection)i).GetEndID() == id || ((Connection)i).GetFrontID() == id)
-                        elements.Remove(i);
+                    if (i is Connection)
+                    {
+                        if (((Connection)i).GetEndID() == id || ((Connection)i).GetFrontID() == id)
+                        {
+                            elements.Remove(i);
+                            break;
+                        }
+                    }
                 }
             }
+            
             return true;
         }
         public Boolean RemoveElement(int id)
         {
-            elements.Remove(elements.Find(x=>x.id==id));
             RemoveConnection(id);
+            elements.Remove(elements.Find(x=>x.id==id));
             return true;
         }
         //Not sure if we'll need this
