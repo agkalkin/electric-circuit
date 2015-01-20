@@ -66,6 +66,29 @@ namespace OOD2
         List<IElement> OpenFile()
         {
             List<IElement> list = new List<IElement>();
+            OpenFileDialog ofd = new OpenFileDialog();
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                FileStream fs = null;
+                BinaryFormatter bf = null;
+
+                try
+                {
+                    fs = new FileStream(ofd.FileName, FileMode.Open, FileAccess.Read);
+                    bf = new BinaryFormatter();
+                    list = (List<IElement>)(bf.Deserialize(fs));
+
+                }
+                catch (IOException)
+                {
+                    MessageBox.Show("Input/Output error");
+                }
+                finally
+                {
+                    if (fs != null) fs.Close();
+                }
+                MessageBox.Show("Loading done !");
+            }
             return list;
         }
 
