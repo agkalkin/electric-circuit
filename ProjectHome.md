@@ -1,0 +1,1 @@
+Piece of software that simulates electric circuit
